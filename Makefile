@@ -1,4 +1,4 @@
 run: 
 	git add -A
-	git commit -m "Initial commit" 
+	git commit -m "add index.html" 
 	git push 
