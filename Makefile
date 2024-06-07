@@ -1,4 +1,4 @@
 run: 
 	git add -A
-	git commit -m "add portfolio.html" 
+	git commit -m "add index.html" 
 	git push 
