@@ -316,8 +316,9 @@ hr {
 }
 
 .hamburger div{
-	width: 30px;
+	width: 25px;
 	height: 3px;
+    align-self: auto;
 	background: #dbdbdb;
 	margin: 5px;
 	transition:all 0.3s ease;
