@@ -18,9 +18,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+    <!-- Icon Dependencies -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
 
+    <!-- Scripts -->
     <!-- Scripts -->
     <script>
         // Resume Download Dropdown functionality
@@ -55,18 +57,18 @@
 
         // Mobile menu toggle
         document.addEventListener('DOMContentLoaded', () => {
-          const mobileMenuButton = document.getElementById('mobile-menu-button');
-          const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
 
-          if (mobileMenuButton && mobileMenu) {
-            mobileMenuButton.addEventListener('click', () => {
-              mobileMenu.classList.toggle('hidden');
-            });
-          }
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
         });
 
-         // Carousel functionality
-         let currentCarouselIndex = 0;
+        // Carousel functionality
+        let currentCarouselIndex = 0;
         function moveCarousel(direction) {
             const carousel = document.getElementById('projectsCarousel');
             const carouselItems = carousel.querySelectorAll('.carousel-item');
@@ -83,7 +85,7 @@
             carousel.style.transform = `translateX(${offset}px)`;
             updateCarouselIndicators(); // Update indicators
         }
-       function updateCarouselIndicators() {
+        function updateCarouselIndicators() {
             const indicators = document.getElementById('carouselIndicators');
             const dots = indicators.querySelectorAll('.carousel-dot');
 
@@ -103,20 +105,20 @@
             const carouselItems = document.querySelectorAll('.carousel-item');
             const indicators = document.getElementById('carouselIndicators');
 
-            if(indicators){
-            for (let i = 0; i < carouselItems.length; i++) {
-                const dot = document.createElement('button');
-                dot.classList.add('carousel-dot', 'w-3', 'h-3', 'rounded-full', 'bg-gray-300', 'hover:bg-blue-600', 'transition-colors', 'duration-300');
-                dot.setAttribute('role', 'tab');
-                dot.setAttribute('aria-controls', 'projectsCarousel');
-                dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
-                dot.addEventListener('click', () => {
-                    currentCarouselIndex = i;
-                    updateCarouselIndicators();
-                    moveCarousel(0)
-                });
-                indicators.appendChild(dot);
-            }
+            if (indicators) {
+                for (let i = 0; i < carouselItems.length; i++) {
+                    const dot = document.createElement('button');
+                    dot.classList.add('carousel-dot', 'w-3', 'h-3', 'rounded-full', 'bg-gray-300', 'hover:bg-blue-600', 'transition-colors', 'duration-300');
+                    dot.setAttribute('role', 'tab');
+                    dot.setAttribute('aria-controls', 'projectsCarousel');
+                    dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+                    dot.addEventListener('click', () => {
+                        currentCarouselIndex = i;
+                        updateCarouselIndicators();
+                        moveCarousel(0)
+                    });
+                    indicators.appendChild(dot);
+                }
             }
 
             updateCarouselIndicators();
@@ -141,34 +143,33 @@
             }
         }
     </script>
+    <style>
+        .project-image {
+            transform-origin: center;
+            backface-visibility: hidden;
+            will-change: transform;
+        }
+    </style>
 
-    <!-- Preload important assets -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Add meta description for SEO -->
-    <meta name="description"
-        content="Nithish Suresh - Software Developer specializing in cloud solutions and intelligent systems" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
-<body class="bg-slate-80 font-['Inter']">
+<body class="bg-gray-900 font-['Inter']">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full z-50">
+    <nav class="bg-gray-800 shadow-xl fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
-                <span class="text-2xl font-bold text-blue-600">Nithish Suresh</span>
+                <span class="text-2xl font-bold text-purple-400">Nithish Suresh</span>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#about" class="text-gray-600 hover:text-blue-600">About</a>
-                    <a href="#projects" class="text-gray-600 hover:text-blue-600">Projects</a>
-                    <a href="#skills" class="text-gray-600 hover:text-blue-600">Skills</a>
-                    <a href="#contact" class="text-gray-600 hover:text-blue-600">Contact</a>
+                    <a href="#about" class="text-gray-300 hover:text-purple-400 transition-colors">About</a>
+                    <a href="#projects" class="text-gray-300 hover:text-purple-400 transition-colors">Projects</a>
+                    <a href="#skills" class="text-gray-300 hover:text-purple-400 transition-colors">Skills</a>
+                    <a href="#contact" class="text-gray-300 hover:text-purple-400 transition-colors">Contact</a>
                 </div>
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden">
-                    <button id="mobile-menu-button" class="outline-none">
-                        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
+                    <button id="mobile-menu-button" class="outline-none text-gray-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16m-7 6h7"></path>
                         </svg>
@@ -176,808 +177,843 @@
                 </div>
             </div>
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="md:hidden hidden absolute mt-16 bg-white w-full left-0">
+            <div id="mobile-menu" class="md:hidden hidden absolute mt-16 bg-gray-800 w-full left-0">
                 <div class="flex flex-col space-y-4 py-4 px-4">
-                    <a href="#about" class="text-gray-600 hover:text-blue-600 block">About</a>
-                    <a href="#projects" class="text-gray-600 hover:text-blue-600 block">Projects</a>
-                    <a href="#skills" class="text-gray-600 hover:text-blue-600 block">Skills</a>
-                    <a href="#contact" class="text-gray-600 hover:text-blue-600 block">Contact</a>
+                    <a href="#about" class="text-gray-300 hover:text-purple-400 block">About</a>
+                    <a href="#projects" class="text-gray-300 hover:text-purple-400 block">Projects</a>
+                    <a href="#skills" class="text-gray-300 hover:text-purple-400 block">Skills</a>
+                    <a href="#contact" class="text-gray-300 hover:text-purple-400 block">Contact</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="about" class="py-16">
-        <header class="pt-24 pb-12 bg-gradient-to-r from-blue-50 to-indigo-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h1 class="text-4xl font-bold text-gray-900 mb-4">
-                        Software Developer
-                    </h1>
-                    <p class="text-xl text-gray-600 mb-8">
-                        Building scalable cloud solutions and intelligent systems
-                    </p>
-                    <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
-                        <a href="mailto:nithish952001@gmail.com"
-                            class="flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 w-fit">
-                            <!-- added w-fit here -->
-                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <section class="pt-32 pb-24 bg-gradient-to-r from-purple-900 to-violet-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-5xl font-bold text-white mb-6">
+                    Software Developer
+                </h1>
+                <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                    Building scalable cloud solutions and intelligent systems
+                </p>
+                <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+                    <a href="mailto:nithish952001@gmail.com"
+                        class="flex items-center bg-purple-600 text-white px-8 py-4 rounded-xl hover:bg-purple-700 transition-all w-fit shadow-lg hover:shadow-purple-500/30">
+                        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        Contact Me
+                    </a>
+                    <div class="relative inline-block" id="resumeDropdown">
+                        <button onclick="toggleResumeDropdown()"
+                            class="flex items-center border-2 border-purple-600 text-purple-400 px-8 py-4 rounded-xl hover:bg-purple-900 transition-all w-fit shadow-lg hover:shadow-purple-500/30">
+                            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                             </svg>
-                            Contact Me
-                        </a>
-                        <!-- Replace the existing Download Resume button with this -->
-                        <div class="relative inline-block" id="resumeDropdown">
-                            <button onclick="toggleResumeDropdown()"
-                                class="flex items-center border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-50 w-fit">
-                                <!-- added w-fit here -->
-                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                                </svg>
-                                Download Resume
-                            </button>
-
-                            <div id="dropdownContent"
-                                class="hidden absolute z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                <div class="py-1">
-                                    <a href="/Resumes/Nithish_SE1.pdf" download
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
-                                        Software Engineering
-                                    </a>
-                                    <a href="/Resumes/Nithish_cloud.pdf" download
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
-                                        Cloud Engineering
-                                    </a>
-                                </div>
+                            Download Resume
+                        </button>
+                        <div id="dropdownContent"
+                            class="hidden absolute z-10 mt-2 w-56 origin-top-right rounded-xl bg-gray-800 shadow-xl ring-1 ring-purple-900 focus:outline-none">
+                            <div class="py-1">
+                                <a href="/Resumes/Nithish_SE1.pdf" download
+                                    class="block px-4 py-2 text-sm text-gray-300 hover:bg-purple-900 hover:text-white">
+                                    Software Engineering
+                                </a>
+                                <a href="/Resumes/Nithish_cloud.pdf" download
+                                    class="block px-4 py-2 text-sm text-gray-300 hover:bg-purple-900 hover:text-white">
+                                    Cloud Engineering
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </header>
+        </div>
     </section>
 
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-white mb-8">About Me</h2>
+                    <p class="text-gray-400 text-lg mb-6">
+                        Results-driven cloud-native software engineer with expertise in building distributed systems
+                        using Go and Python.
+                        Currently pursuing my Master's in Computer and Infromation Science at the University of
+                        Michigan.
+                        Proficient in developing high-performance, fault-tolerant applications leveraging AWS/GCP cloud
+                        services, microservices architecture, and
+                        containerization. Research experience in GenAI with a focus on deepfake detection systems.
+                        Passionate about designing scalable
+                        and efficient solutions that handle high-concurrency workloads while maintaining response times.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                            <span class="text-gray-300">3+ years experience in cloud architecture</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                            <span class="text-gray-300">Specialized in Golang microservices</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                            <span class="text-gray-300">AWS Certified Solutions Architect</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div
+                        class="relative w-96 h-96 rounded-2xl overflow-hidden shadow-xl hover:shadow-purple-500/20 transition-all">
+                        <img src="./img/nithish.jpeg" alt="Nithish Suresh"
+                            class="w-full h-full object-cover transform hover:scale-105 transition-all duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-purple-900/50 to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Education Section -->
-    <section id="education" class="py-16">
+    <section id="education" class="py-16 bg-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-900 mb-8">Education</h2>
+            <h2 class="text-3xl font-bold text-white mb-8">Education</h2>
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <h3 class="text-xl font-semibold text-gray-800">
+                <div class="bg-gray-900 p-8 rounded-2xl shadow-xl hover:shadow-purple-500/10 transition-all">
+                    <h3 class="text-xl font-semibold text-gray-100">
                         University of Michigan
                     </h3>
-                    <p class="text-blue-600 mb-2">
+                    <p class="text-purple-400 mb-2">
                         Master of Science in Computer and Information Science
                     </p>
-                    <p class="text-gray-500">August 2023 - May 2025</p>
+                    <p class="text-gray-400">August 2023 - May 2025</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <h3 class="text-xl font-semibold text-gray-800">Anna University</h3>
-                    <p class="text-blue-600 mb-2">
+                <div class="bg-gray-900 p-8 rounded-2xl shadow-xl hover:shadow-purple-500/10 transition-all">
+                    <h3 class="text-xl font-semibold text-gray-100">Anna University</h3>
+                    <p class="text-purple-400 mb-2">
                         Bachelor of Technology in Computer Science and Engineering
                     </p>
-                    <p class="text-gray-500">August 2018 - May 2022</p>
+                    <p class="text-gray-400">August 2018 - May 2022</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Technical Skills Section -->
-    <section id="skills" class="py-16 bg-gray-50">
+    <section id="skills" class="py-16 bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-900 mb-8">Technical Skills</h2>
+            <h2 class="text-3xl font-bold text-white mb-8">Technical Skills</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Languages & Database -->
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Languages & Database</h3>
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-xl hover:shadow-purple-500/10 transition-all">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">Languages & Database</h3>
                     <div class="grid grid-cols-3 gap-4">
-                        <div class="flex flex-col items-center p-2">
-                            <i class="devicon-go-plain text-4xl text-blue-600 mb-2"></i>
-                            <span class="text-sm">Golang</span>
+                        <div class="flex flex-col items-center p-2 hover:bg-gray-700/50 rounded-lg transition-colors">
+                            <i class="devicon-go-plain text-4xl text-purple-400 mb-2"></i>
+                            <span class="text-sm text-gray-300">Golang</span>
                         </div>
-                        <div class="flex flex-col items-center p-2">
-                            <i class="devicon-python-plain text-4xl text-yellow-600 mb-2"></i>
-                            <span class="text-sm">Python</span>
+                        <div class="flex flex-col items-center p-2 hover:bg-gray-700/50 rounded-lg transition-colors">
+                            <i class="devicon-python-plain text-4xl text-yellow-400 mb-2"></i>
+                            <span class="text-sm text-gray-300">Python</span>
                         </div>
-                        <div class="flex flex-col items-center p-2">
+                        <div class="flex flex-col items-center p-2 hover:bg-gray-700/50 rounded-lg transition-colors">
                             <i class="devicon-cplusplus-plain text-4xl text-blue-400 mb-2"></i>
-                            <span class="text-sm">C++</span>
+                            <span class="text-sm text-gray-300">C++</span>
                         </div>
-                        <div class="flex flex-col items-center p-2">
-                            <i class="devicon-c-plain text-4xl text-blue-800 mb-2"></i>
-                            <span class="text-sm">C</span>
+                        <div class="flex flex-col items-center p-2 hover:bg-gray-700/50 rounded-lg transition-colors">
+                            <i class="devicon-c-plain text-4xl text-blue-300 mb-2"></i>
+                            <span class="text-sm text-gray-300">C</span>
                         </div>
-                        <div class="flex flex-col items-center">
-                            <i class="devicon-html5-plain text-4xl text-orange-600 mb-2"></i>
-                            <span class="text-sm">HTML5</span>
+                        <div class="flex flex-col items-center p-2 hover:bg-gray-700/50 rounded-lg transition-colors">
+                            <i class="devicon-javascript-plain text-4xl text-yellow-300 mb-2"></i>
+                            <span class="text-sm text-gray-300">JavaScript</span>
                         </div>
-                        <div class="flex flex-col items-center">
-                            <i class="devicon-css3-plain text-4xl text-blue-600 mb-2"></i>
-                            <span class="text-sm">CSS3</span>
-                        </div>
-                        <div class="flex flex-col items-center">
-                            <i class="devicon-tailwindcss-plain text-4xl text-cyan-600 mb-2"></i>
-                            <span class="text-sm">Tailwind</span>
-                        </div>
-                        <div class="flex flex-col items-center p-2">
-                            <i class="devicon-javascript-plain text-4xl text-yellow-400 mb-2"></i>
-                            <span class="text-sm">JavaScript</span>
-                        </div>
-                        <div class="flex flex-col items-center p-2">
+                        <div class="flex flex-col items-center p-2 hover:bg-gray-700/50 rounded-lg transition-colors">
                             <i class="devicon-postgresql-plain text-4xl text-blue-400 mb-2"></i>
-                            <span class="text-sm">PostgreSQL</span>
+                            <span class="text-sm text-gray-300">PostgreSQL</span>
                         </div>
-                        <div class="flex flex-col items-center p-2">
-                            <i class="devicon-mysql-plain text-4xl text-orange-600 mb-2"></i>
-                            <span class="text-sm">MySQL</span>
+                        <div class="flex flex-col items-center p-2 hover:bg-gray-700/50 rounded-lg transition-colors">
+                            <i class="devicon-mysql-plain text-4xl text-orange-400 mb-2"></i>
+                            <span class="text-sm text-gray-300">MySQL</span>
                         </div>
-                        <div class="flex flex-col items-center p-2">
+                        <div class="flex flex-col items-center p-2 hover:bg-gray-700/50 rounded-lg transition-colors">
                             <i class="devicon-sqlite-plain text-4xl text-blue-300 mb-2"></i>
-                            <span class="text-sm">SQLite3</span>
+                            <span class="text-sm text-gray-300">SQLite3</span>
                         </div>
-                        <div class="flex flex-col items-center p-2">
-                            <i class="devicon-amazonwebservices-plain text-4xl text-orange-700 mb-2"></i>
-                            <span class="text-sm">DynamoDB</span>
+                        <div class="flex flex-col items-center p-2 hover:bg-gray-700/50 rounded-lg transition-colors">
+                            <i class="devicon-amazonwebservices-plain text-4xl text-orange-400 mb-2"></i>
+                            <span class="text-sm text-gray-300">DynamoDB</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Cloud Services & CI/CD -->
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Cloud & DevOps</h3>
+                <!-- Cloud & DevOps -->
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-xl hover:shadow-purple-500/10 transition-all">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">Cloud & DevOps</h3>
                     <div class="grid grid-cols-3 gap-4">
-                        <div class="flex flex-col items-center p-2">
+                        <div class="flex flex-col items-center p-2 hover:bg-gray-700/50 rounded-lg transition-colors">
                             <i class="devicon-googlecloud-plain text-4xl text-blue-400 mb-2"></i>
-                            <span class="text-sm">Google Cloud</span>
+                            <span class="text-sm text-gray-300">Google Cloud</span>
                         </div>
-                        <div class="flex flex-col items-center p-2">
-                            <i class="devicon-amazonwebservices-plain text-4xl text-orange-600 mb-2"></i>
-                            <span class="text-sm">AWS</span>
+                        <div class="flex flex-col items-center p-2 hover:bg-gray-700/50 rounded-lg transition-colors">
+                            <i class="devicon-amazonwebservices-plain text-4xl text-orange-400 mb-2"></i>
+                            <span class="text-sm text-gray-300">AWS</span>
                         </div>
-                        <div class="flex flex-col items-center p-2">
-                            <i class="devicon-docker-plain text-4xl text-blue-600 mb-2"></i>
-                            <span class="text-sm">Docker</span>
+                        <div class="flex flex-col items-center p-2 hover:bg-gray-700/50 rounded-lg transition-colors">
+                            <i class="devicon-docker-plain text-4xl text-blue-400 mb-2"></i>
+                            <span class="text-sm text-gray-300">Docker</span>
                         </div>
-                        <div class="flex flex-col items-center p-2">
+                        <div class="flex flex-col items-center p-2 hover:bg-gray-700/50 rounded-lg transition-colors">
                             <i class="devicon-kubernetes-plain text-4xl text-blue-500 mb-2"></i>
-                            <span class="text-sm">Kubernetes</span>
+                            <span class="text-sm text-gray-300">Kubernetes</span>
                         </div>
-                        <div class="flex flex-col items-center p-2">
-                            <i class="devicon-git-plain text-4xl text-orange-600 mb-2"></i>
-                            <span class="text-sm">Git</span>
+                        <div class="flex flex-col items-center p-2 hover:bg-gray-700/50 rounded-lg transition-colors">
+                            <i class="devicon-git-plain text-4xl text-orange-400 mb-2"></i>
+                            <span class="text-sm text-gray-300">Git</span>
                         </div>
-                        <div class="flex flex-col items-center p-2">
-                            <i class="devicon-github-plain text-4xl text-gray-800 mb-2"></i>
-                            <span class="text-sm">GitHub</span>
+                        <div class="flex flex-col items-center p-2 hover:bg-gray-700/50 rounded-lg transition-colors">
+                            <i class="devicon-github-plain text-4xl text-gray-300 mb-2"></i>
+                            <span class="text-sm text-gray-300">GitHub</span>
                         </div>
-                        <div class="flex flex-col items-center p-2">
-                            <i class="devicon-redis-plain text-4xl text-gray-600 mb-2"></i>
-                            <span class="text-sm">Redis</span>
+                        <div class="flex flex-col items-center p-2 hover:bg-gray-700/50 rounded-lg transition-colors">
+                            <i class="devicon-redis-plain text-4xl text-red-500 mb-2"></i>
+                            <span class="text-sm text-gray-300">Redis</span>
                         </div>
-                        <div class="flex flex-col items-center">
-                            <i class="devicon-react-original text-4xl text-blue-500 mb-2"></i>
-                            <span class="text-sm">React</span>
+                        <div class="flex flex-col items-center p-2 hover:bg-gray-700/50 rounded-lg transition-colors">
+                            <i class="fas fa-server text-4xl text-green-400 mb-2"></i>
+                            <span class="text-sm text-gray-300">Cloud Run</span>
                         </div>
-                        <div class="flex flex-col items-center">
-                            <i class="devicon-nodejs-plain text-4xl text-green-600 mb-2"></i>
-                            <span class="text-sm">Node.js</span>
-                        </div>
-                        <div class="flex flex-col items-center p-2">
-                            <i class="devicon-github-plain text-4xl text-gray-600 mb-2"></i>
-                            <span class="text-sm">GitHub Actions</span>
-                        </div>
-                        <div class="flex flex-col items-center p-2">
-                            <i class="fas fa-server text-4xl text-green-600 mb-2"></i>
-                            <span class="text-sm">Cloud Run</span>
-                        </div>
-                        <div class="flex flex-col items-center p-2">
-                            <i class="fas fa-database text-4xl text-purple-600 mb-2"></i>
-                            <span class="text-sm">Bigtable</span>
+                        <div class="flex flex-col items-center p-2 hover:bg-gray-700/50 rounded-lg transition-colors">
+                            <i class="fas fa-database text-4xl text-purple-400 mb-2"></i>
+                            <span class="text-sm text-gray-300">Bigtable</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- AI/ML -->
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <h3 class="text-xl font-semibold mb-4 text-gray-800">AI/ML</h3>
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-xl hover:shadow-purple-500/10 transition-all">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">AI/ML</h3>
                     <div class="grid grid-cols-3 gap-4">
-                        <div class="flex flex-col items-center p-2">
-                            <i class="fas fa-robot text-4xl text-purple-500 mb-2"></i>
-                            <span class="text-sm">Ollama</span>
+                        <div class="flex flex-col items-center p-2 hover:bg-gray-700/50 rounded-lg transition-colors">
+                            <i class="fas fa-robot text-4xl text-purple-400 mb-2"></i>
+                            <span class="text-sm text-gray-300">Ollama</span>
                         </div>
-                        <div class="flex flex-col items-center p-2">
-                            <i class="fas fa-link text-4xl text-blue-600 mb-2"></i>
-                            <span class="text-sm">LangChain</span>
+                        <div class="flex flex-col items-center p-2 hover:bg-gray-700/50 rounded-lg transition-colors">
+                            <i class="fas fa-link text-4xl text-blue-400 mb-2"></i>
+                            <span class="text-sm text-gray-300">LangChain</span>
                         </div>
-                        <div class="flex flex-col items-center p-2">
-                            <i class="fab fa-chatgpt text-4xl text-purple-600 mb-2"></i>
-                            <span class="text-sm">OpenAI</span>
+                        <div class="flex flex-col items-center p-2 hover:bg-gray-700/50 rounded-lg transition-colors">
+                            <i class="fab fa-chatgpt text-4xl text-purple-400 mb-2"></i>
+                            <span class="text-sm text-gray-300">OpenAI</span>
                         </div>
-                        <div class="flex flex-col items-center p-2">
-                            <i class="devicon-pytorch-plain text-4xl text-red-600 mb-2"></i>
-                            <span class="text-sm">PyTorch</span>
+                        <div class="flex flex-col items-center p-2 hover:bg-gray-700/50 rounded-lg transition-colors">
+                            <i class="devicon-pytorch-plain text-4xl text-red-400 mb-2"></i>
+                            <span class="text-sm text-gray-300">PyTorch</span>
                         </div>
-                        <div class="flex flex-col items-center p-2">
-                            <i class="fas fa-eye text-4xl text-green-600 mb-2"></i>
-                            <span class="text-sm">OpenCV</span>
+                        <div class="flex flex-col items-center p-2 hover:bg-gray-700/50 rounded-lg transition-colors">
+                            <i class="fas fa-eye text-4xl text-green-400 mb-2"></i>
+                            <span class="text-sm text-gray-300">OpenCV</span>
+                        </div>
+                        <div class="flex flex-col items-center p-2 hover:bg-gray-700/50 rounded-lg transition-colors">
+                            <i class="fas fa-brain text-4xl text-purple-400 mb-2"></i>
+                            <span class="text-sm text-gray-300">TensorFlow</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-16">
+    <section id="projects" class="py-16 bg-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-900 mb-8">Featured Projects</h2>
+            <h2 class="text-3xl font-bold text-white mb-12 text-center">Featured Projects</h2>
 
-            <div class="relative group">
-                <!-- Carousel Content -->
-                <div class="carousel-container relative flex overflow-x-auto snap-x snap-mandatory pb-4 space-x-4 w-screen -ml-[50vw] left-1/2 right-1/2 scroll-smooth transform-gpu backface-hidden"
-                    id="projectsCarousel" onTouchStart="handleTouchStart(event)" onTouchMove="handleTouchMove(event)">
-                    <!-- Real-Time Chat App -->
+            <!-- Real-Time Chat App -->
+            <div class="flex flex-col md:flex-row items-center gap-8 mb-16">
+                <!-- Project Image -->
+                <div class="w-full md:w-1/2">
                     <div
-                        class="carousel-item snap-start flex-none w-full md:w-1/2 lg:w-1/3 px-4 transform-gpu hover:-translate-y-1 transition-all duration-300">
-                        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                            <div class="p-6">
-                                <div class="flex items-center mb-4">
-                                    <div class="bg-blue-100 p-2 rounded-lg">
-                                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                                        </svg>
-                                    </div>
-                                    <h3 class="text-xl font-semibold ml-3">
-                                        Scalable Real-Time Chat System
-                                    </h3>
-                                </div>
-                                <p class="text-gray-600 mb-4">
-                                    Engineered a high-performance, Discord-inspired chat
-                                    platform with distributed architecture supporting 10,000+
-                                    concurrent users and real-time message delivery
-                                </p>
-                                <div class="flex flex-wrap gap-2 mb-4">
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">Go</span>
-                                    <span
-                                        class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">WebSocket</span>
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">DynamoDB</span>
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">AWS SQS</span>
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">Docker</span>
-                                </div>
-                                <ul class="list-disc pl-5 text-gray-600 space-y-2">
-                                    <li>
-                                        Achieved horizontal scalability using consistent hashing
-                                        for load balancing across multiple nodes
-                                    </li>
-                                    <li>
-                                        Optimized message delivery latency by 40% through FIFO
-                                        queues and WebSocket connections
-                                    </li>
-                                    <li>
-                                        Implemented fault tolerance with Docker containerization
-                                        and AWS auto-scaling groups
-                                    </li>
-                                </ul>
-
-                                <!-- Add this button section after the list -->
-                                <div class="flex space-x-4 mt-6">
-                                    <a href="https://github.com/yourusername/chat-system" target="_blank"
-                                        class="flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
-                                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                            <path fill-rule="evenodd"
-                                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                        GitHub
-                                    </a>
-                                    <a href="https://your-chat-app-demo.com" target="_blank"
-                                        class="flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                        </svg>
-                                        Live Demo
-                                    </a>
-                                </div>
+                        class="bg-gray-900 h-80 rounded-2xl shadow-xl overflow-hidden hover:shadow-purple-500/20 transition-all">
+                        <div class="grid grid-cols-1 md:grid-cols-2 h-full">
+                            <!-- Chat Interface -->
+                            <div class="relative overflow-hidden">
+                                <img src="./img/chatapp/chat.png"
+                                    class="project-image w-full h-full object-cover transform hover:scale-105 transition-all duration-300"
+                                    alt="Chat Application Interface">
+                                <div class="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
+                            </div>
+                            <!-- Server Logs -->
+                            <div class="relative overflow-hidden border-l border-purple-900/30">
+                                <img src="./img/chatapp/chat_log.png"
+                                    class="project-image w-full h-full object-cover transform hover:scale-105 transition-all duration-300"
+                                    alt="Server Logs Example">
+                                <div class="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Smart Door System -->
-                    <div
-                        class="carousel-item snap-start flex-none w-full md:w-1/2 lg:w-1/3 px-4 transform-gpu hover:-translate-y-1 transition-all duration-300">
-                        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                            <div class="p-6">
-                                <div class="flex items-center mb-4">
-                                    <div class="bg-green-100 p-2 rounded-lg">
-                                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                                        </svg>
-                                    </div>
-                                    <h3 class="text-xl font-semibold ml-3">
-                                        AI-Powered Smart Door Security
-                                    </h3>
-                                </div>
-                                <p class="text-gray-600 mb-4">
-                                    Developed an intelligent access control system integrating
-                                    facial recognition with AWS Rekognition and multi-factor
-                                    authentication for enhanced security
-                                </p>
-                                <div class="flex flex-wrap gap-2 mb-4">
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">Python</span>
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">AWS
-                                        Rekognition</span>
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">Lambda</span>
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">Kinesis</span>
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">SNS</span>
-                                </div>
-                                <ul class="list-disc pl-5 text-gray-600 space-y-2">
-                                    <li>
-                                        Achieved 95% accuracy in facial recognition using AWS
-                                        Rekognition with custom model training
-                                    </li>
-                                    <li>
-                                        Implemented secure time-based OTP system with 5-minute
-                                        expiry for two-factor authentication
-                                    </li>
-                                    <li>
-                                        Designed real-time notification system for unauthorized
-                                        access attempts using AWS SNS
-                                    </li>
-                                </ul>
-
-                                <!-- Add buttons -->
-                                <div class="flex space-x-4 mt-6">
-                                    <a href="https://github.com/yourusername/smart-door" target="_blank"
-                                        class="flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
-                                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                            <path fill-rule="evenodd"
-                                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                        GitHub
-                                    </a>
-                                </div>
+                </div>
+                <!-- Project Info -->
+                <div class="w-full md:w-1/2">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-900/30 p-2 rounded-lg">
+                                <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                </svg>
                             </div>
+                            <h3 class="text-xl font-semibold ml-3 text-gray-100">
+                                Scalable Real-Time Chat System
+                            </h3>
                         </div>
-                    </div>
-
-                    <!-- AI Dining Concierge -->
-                    <div
-                        class="carousel-item snap-start flex-none w-full md:w-1/2 lg:w-1/3 px-4 transform-gpu hover:-translate-y-1 transition-all duration-300">
-                        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                            <div class="p-6">
-                                <div class="flex items-center mb-4">
-                                    <div class="bg-purple-100 p-2 rounded-lg">
-                                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                                        </svg>
-                                    </div>
-                                    <h3 class="text-xl font-semibold ml-3">
-                                        AI Dining Concierge
-                                    </h3>
-                                </div>
-                                <p class="text-gray-600 mb-4">
-                                    Built a serverless restaurant recommendation chatbot using
-                                    natural language processing to provide personalized dining
-                                    suggestions based on user preferences
-                                </p>
-                                <div class="flex flex-wrap gap-2 mb-4">
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">AWS Lex</span>
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">Lambda</span>
-                                    <span
-                                        class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">Elasticsearch</span>
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">DynamoDB</span>
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">Yelp API</span>
-                                </div>
-                                <ul class="list-disc pl-5 text-gray-600 space-y-2">
-                                    <li>
-                                        Optimized response time by 60% using DynamoDB caching for
-                                        frequently requested cuisines
-                                    </li>
-                                    <li>
-                                        Enhanced search accuracy with Elasticsearch fuzzy matching
-                                        for cuisine and location queries
-                                    </li>
-                                    <li>
-                                        Integrated automated SMS notification system for
-                                        restaurant recommendations
-                                    </li>
-                                </ul>
-
-                                <!-- Add buttons -->
-                                <div class="flex space-x-4 mt-6">
-                                    <a href="https://github.com/yourusername/dining-concierge" target="_blank"
-                                        class="flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
-                                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                            <path fill-rule="evenodd"
-                                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                        GitHub
-                                    </a>
-                                    <a href="https://dining-concierge.yourdomain.com" target="_blank"
-                                        class="flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                        </svg>
-                                        Live Demo
-                                    </a>
-                                </div>
-                            </div>
+                        <p class="text-gray-400 mb-4">
+                            Engineered a high-performance, Discord-inspired chat platform with distributed architecture
+                            supporting 10,000+ concurrent users and real-time message delivery
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">Go</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">WebSocket</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">DynamoDB</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">AWS SQS</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">Docker</span>
                         </div>
-                    </div>
-
-                    <!-- Todo List Application -->
-                    <div
-                        class="carousel-item snap-start flex-none w-full md:w-1/2 lg:w-1/3 px-4 transform-gpu hover:-translate-y-1 transition-all duration-300">
-                        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                            <div class="p-6">
-                                <div class="flex items-center mb-4">
-                                    <div class="bg-purple-100 p-2 rounded-lg">
-                                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                                        </svg>
-                                    </div>
-                                    <h3 class="text-xl font-semibold ml-3">
-                                        Collaborative Todo List
-                                    </h3>
-                                </div>
-                                <p class="text-gray-600 mb-4">
-                                    Developed a real-time collaborative task management system
-                                    with concurrent access control and live updates for shared
-                                    household coordination
-                                </p>
-                                <div class="flex flex-wrap gap-2 mb-4">
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">Go</span>
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">SQLite3</span>
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">REST API</span>
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">Chi
-                                        Router</span>
-                                    <span
-                                        class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">WebSocket</span>
-                                </div>
-                                <ul class="list-disc pl-5 text-gray-600 space-y-2">
-                                    <li>
-                                        Implemented mutex-based concurrency control for safe task
-                                        updates
-                                    </li>
-                                    <li>
-                                        Built real-time notifications using WebSocket for instant
-                                        task synchronization
-                                    </li>
-                                    <li>
-                                        Designed RESTful API with Chi router for efficient CRUD
-                                        operations
-                                    </li>
-                                </ul>
-
-                                <!-- Add buttons -->
-                                <div class="flex space-x-4 mt-6">
-                                    <a href="https://github.com/yourusername/project-name" target="_blank"
-                                        class="flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
-                                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                            <path fill-rule="evenodd"
-                                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                        GitHub
-                                    </a>
-                                    <a href="https://todo.nithish.net/" target="_blank"
-                                        class="flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                        </svg>
-                                        Live Demo
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Manga Reader -->
-                    <div
-                        class="carousel-item snap-start flex-none w-full md:w-1/2 lg:w-1/3 px-4 transform-gpu hover:-translate-y-1 transition-all duration-300">
-                        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                            <div class="p-6">
-                                <div class="flex items-center mb-4">
-                                    <div class="bg-purple-100 p-2 rounded-lg">
-                                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                        </svg>
-                                    </div>
-                                    <h3 class="text-xl font-semibold ml-3">
-                                        Ad-Free Manga Reader
-                                    </h3>
-                                </div>
-                                <p class="text-gray-600 mb-4">
-                                    Developed a streamlined manga reading platform with content
-                                    caching and offline reading capabilities for an optimized,
-                                    ad-free reading experience
-                                </p>
-                                <div class="flex flex-wrap gap-2 mb-4">
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">Go</span>
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">REST API</span>
-                                    <span
-                                        class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">PostgreSQL</span>
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">Tailwind
-                                        CSS</span>
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">Docker</span>
-                                </div>
-                                <ul class="list-disc pl-5 text-gray-600 space-y-2">
-                                    <li>
-                                        Implemented efficient image caching system reducing load
-                                        times by 70%
-                                    </li>
-                                    <li>
-                                        Built RESTful API for manga metadata and chapter
-                                        management
-                                    </li>
-                                    <li>
-                                        Designed responsive UI with infinite scroll and chapter
-                                        preloading
-                                    </li>
-                                </ul>
-
-                                <!-- Add buttons -->
-                                <div class="flex space-x-4 mt-6">
-                                    <a href="https://github.com/yourusername/project-name" target="_blank"
-                                        class="flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
-                                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                            <path fill-rule="evenodd"
-                                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                        GitHub
-                                    </a>
-                                    <a href="https://project-demo.yourdomain.com" target="_blank"
-                                        class="flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                        </svg>
-                                        Live Demo
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Weather Application -->
-                    <div
-                        class="carousel-item snap-start flex-none w-full md:w-1/2 lg:w-1/3 px-4 transform-gpu hover:-translate-y-1 transition-all duration-300">
-                        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                            <div class="p-6">
-                                <div class="flex items-center mb-4">
-                                    <div class="bg-purple-100 p-2 rounded-lg">
-                                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                                        </svg>
-                                    </div>
-                                    <h3 class="text-xl font-semibold ml-3">
-                                        Weather Forecast Application
-                                    </h3>
-                                </div>
-                                <p class="text-gray-600 mb-4">
-                                    Built a high-performance weather forecasting system with
-                                    intelligent location detection and real-time weather updates
-                                    using OpenWeatherMap API
-                                </p>
-                                <div class="flex flex-wrap gap-2 mb-4">
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">Go</span>
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">Tailwind
-                                        CSS</span>
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">Docker</span>
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">AWS App
-                                        Runner</span>
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">Route53</span>
-                                </div>
-                                <ul class="list-disc pl-5 text-gray-600 space-y-2">
-                                    <li>
-                                        Implemented multi-layer location detection using Browser
-                                        API, IP geolocation, and manual input
-                                    </li>
-                                    <li>
-                                        Optimized API handling for 50+ requests/sec using Go
-                                        concurrency patterns
-                                    </li>
-                                    <li>
-                                        Achieved 99.9% uptime with Route53 failover routing and
-                                        reduced cold-start latency by 60%
-                                    </li>
-                                </ul>
-
-                                <!-- Add buttons -->
-                                <div class="flex space-x-4 mt-6">
-                                    <a href="https://github.com/yourusername/project-name" target="_blank"
-                                        class="flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
-                                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                            <path fill-rule="evenodd"
-                                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                        GitHub
-                                    </a>
-                                    <a href="https://weatherapp.nithish.net/" target="_blank"
-                                        class="flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                        </svg>
-                                        Live Demo
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tic Tac Toe Game -->
-                    <div
-                        class="carousel-item snap-start flex-none w-full md:w-1/2 lg:w-1/3 px-4 transform-gpu hover:-translate-y-1 transition-all duration-300">
-                        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                            <div class="p-6">
-                                <div class="flex items-center mb-4">
-                                    <div class="bg-purple-100 p-2 rounded-lg">
-                                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M14.828 14.828a4 4 0 01-5.656 0M9.172 9.172a4 4 0 015.656 0M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                    </div>
-                                    <h3 class="text-xl font-semibold ml-3">
-                                        Real-Time Multiplayer Tic Tac Toe
-                                    </h3>
-                                </div>
-                                <p class="text-gray-600 mb-4">
-                                    Built a cross-platform multiplayer Tic Tac Toe game with
-                                    real-time gameplay using WebSocket for seamless player
-                                    interaction and move synchronization
-                                </p>
-                                <div class="flex flex-wrap gap-2 mb-4">
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">Go</span>
-                                    <span
-                                        class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">WebSocket</span>
-                                    <span
-                                        class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">JavaScript</span>
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">HTML/CSS</span>
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">Docker</span>
-                                </div>
-                                <ul class="list-disc pl-5 text-gray-600 space-y-2">
-                                    <li>
-                                        Implemented real-time game state synchronization using
-                                        WebSocket protocol
-                                    </li>
-                                    <li>
-                                        Built matchmaking system for pairing online players and
-                                        game room management
-                                    </li>
-                                    <li>
-                                        Designed responsive UI with real-time move validation and
-                                        game status updates
-                                    </li>
-                                </ul>
-
-                                <!-- Add buttons -->
-                                <div class="flex space-x-4 mt-6">
-                                    <a href="https://github.com/yourusername/project-name" target="_blank"
-                                        class="flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
-                                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                            <path fill-rule="evenodd"
-                                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                        GitHub
-                                    </a>
-                                    <a href="https://project-demo.yourdomain.com" target="_blank"
-                                        class="flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                        </svg>
-                                        Live Demo
-                                    </a>
-                                </div>
-                            </div>
+                        <ul class="list-disc pl-5 text-gray-400 space-y-2 mb-6">
+                            <li>Achieved horizontal scalability using consistent hashing for load balancing</li>
+                            <li>Optimized message delivery latency by 40% through FIFO queues</li>
+                            <li>Implemented fault tolerance with Docker containerization</li>
+                        </ul>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/yourusername/chat-system" target="_blank"
+                                class="flex items-center justify-center px-4 py-2 bg-purple-600 text-white rounded-xl hover:bg-purple-700 transition-all">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd"
+                                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                GitHub
+                            </a>
+                            <a href="https://your-chat-app-demo.com" target="_blank"
+                                class="flex items-center justify-center px-4 py-2 bg-gray-700 text-gray-300 rounded-xl hover:bg-gray-600 transition-all">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                                Live Demo
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Carousel Navigation and Indicators -->
-            <!-- <div class="flex items-center justify-center mt-8"> -->
-            <!-- Previous Button -->
-            <!-- <button class="mx-2 p-3 bg-white rounded-lg shadow-md hover:shadow-lg transform hover:-translate-x-1 transition-all duration-300 group"
-                    onclick="moveCarousel(-1)" 
-                    aria-label="Previous project">
-                    <div class="flex items-center">
-                        <svg class="w-5 h-5 text-gray-600 group-hover:text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-                        </svg>
-                        <span class="ml-2 text-gray-600 group-hover:text-blue-600 font-medium">Previous</span>
+            <!-- Smart Door System -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-8 mb-16">
+                <!-- Project Image -->
+                <div class="w-full md:w-1/2">
+                    <div
+                        class="bg-gray-900 h-80 rounded-2xl shadow-xl overflow-hidden hover:shadow-purple-500/20 transition-all">
+                        <div class="grid grid-cols-1 md:grid-cols-2 h-full">
+                            <!-- Architure Interface -->
+                            <div class="relative overflow-hidden">
+                                <img src="./img/smartDoor/architecture.png"
+                                    class="project-image w-full h-full object-cover transform hover:scale-105 transition-all duration-300"
+                                    alt="Chat Application Interface">
+                                <div class="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
+                            </div>
+                            <!-- Server Logs -->
+                            <div class="relative overflow-hidden border-l border-purple-900/30">
+                                <img src="./img/smartDoor/smartdoor.png"
+                                    class="project-image w-full h-full object-cover transform hover:scale-105 transition-all duration-300"
+                                    alt="Server Logs Example">
+                                <div class="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
+                            </div>
+                        </div>
                     </div>
-                </button> -->
-
-            <!-- Indicators -->
-            <!-- <div class="flex items-center justify-center mx-4 space-x-2" role="tablist" id="carouselIndicators"> -->
-            <!-- Dots will be added by JavaScript -->
-            <!-- </div> -->
-
-            <!-- Next Button -->
-            <!-- <button class="mx-2 p-3 bg-white rounded-lg shadow-md hover:shadow-lg transform hover:translate-x-1 transition-all duration-300 group"
-                    onclick="moveCarousel(1)" 
-                    aria-label="Next project">
-                    <div class="flex items-center">
-                        <span class="mr-2 text-gray-600 group-hover:text-blue-600 font-medium">Next</span>
-                        <svg class="w-5 h-5 text-gray-600 group-hover:text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                        </svg>
-                    </div>
-                </button> 
-            </div>-->
-        </div>
-    </section>
-
-    <section id="contact" class="py-16 bg-blue-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h2 class="text-4xl font-bold text-black-900 mb-8">
-                    Let's Brew Something Together
-                </h2>
-                <h3 class="text-lg text-black-900 mb-8">
-                    ☕ Available for collaborations and coffee chats
-                </h3>
-
-                <!-- Email with animated mailbox -->
-                <div class="flex justify-center items-center mb-8">
-                    <div class="relative group">
-                        <a href="mailto:nithish952001@gmail.com"
-                            class="flex items-center px-6 py-3 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
-                            <div class="group-hover:animate-bounce transition-all duration-300">
-                                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor"
+                </div>
+                <!-- Project Info -->
+                <div class="w-full md:w-1/2">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-900/30 p-2 rounded-lg">
+                                <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 19v-8.93a2 2 0 01.89-1.664l7-4.666a2 2 0 012.22 0l7 4.666A2 2 0 0121 10.07V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19l6.75-4.5M21 19l-6.75-4.5M3 10l6.75 4.5M21 10l-6.75 4.5m0 0l-1.14.76a2 2 0 01-2.22 0l-1.14-.76" />
+                                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                                 </svg>
                             </div>
-                            <div class="text-left">
-                                <div class="text-sm text-gray-500">Email me at</div>
-                                <div class="text-blue-600 font-medium">
-                                    nithish952001@gmail.com
-                                </div>
+                            <h3 class="text-xl font-semibold ml-3 text-gray-100">
+                                AI-Powered Smart Door Security
+                            </h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">
+                            Developed an intelligent access control system integrating facial recognition with AWS
+                            Rekognition and multi-factor authentication
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">Python</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">AWS
+                                Rekognition</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">Lambda</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">Kinesis</span>
+                        </div>
+                        <ul class="list-disc pl-5 text-gray-400 space-y-2 mb-6">
+                            <li>Achieved 95% accuracy in facial recognition with AWS Rekognition</li>
+                            <li>Implemented secure time-based OTP system with 5-minute expiry</li>
+                            <li>Real-time notifications for unauthorized access attempts</li>
+                        </ul>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/yourusername/smart-door" target="_blank"
+                                class="flex items-center justify-center px-4 py-2 bg-purple-600 text-white rounded-xl hover:bg-purple-700 transition-all">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd"
+                                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Dining Concierge -->
+            <div class="flex flex-col md:flex-row items-center gap-8 mb-16">
+                <!-- Project Image -->
+                <div class="w-full md:w-1/2">
+                    <div
+                        class="bg-gray-900 h-80 rounded-2xl shadow-xl overflow-hidden hover:shadow-purple-500/20 transition-all">
+                        <div class="grid grid-cols-1 md:grid-cols-2 h-full">
+                            <!-- Chat Interface -->
+                            <div class="relative overflow-hidden">
+                                <img src="./img/Dininig/diningbot.png"
+                                    class="project-image w-full h-full object-cover transform hover:scale-105 transition-all duration-300"
+                                    alt="Chat Application Interface">
+                                <div class="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
                             </div>
-                        </a>
+                            <!-- Server Logs -->
+                            <div class="relative overflow-hidden border-l border-purple-900/30">
+                                <img src="./img/Dininig/diningbot1.png"
+                                    class="project-image w-full h-full object-cover transform hover:scale-105 transition-all duration-300"
+                                    alt="Server Logs Example">
+                                <div class="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Info -->
+                <div class="w-full md:w-1/2">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-900/30 p-2 rounded-lg">
+                                <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold ml-3 text-gray-100">
+                                AI Dining Concierge
+                            </h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">
+                            Built a serverless restaurant recommendation chatbot using natural language processing to
+                            provide personalized dining suggestions based on user preferences
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">AWS Lex</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">Lambda</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">Elasticsearch</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">DynamoDB</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">Yelp API</span>
+                        </div>
+                        <ul class="list-disc pl-5 text-gray-400 space-y-2 mb-6">
+                            <li>Optimized response time by 60% using DynamoDB caching</li>
+                            <li>Enhanced search accuracy with Elasticsearch fuzzy matching</li>
+                            <li>Integrated automated SMS notification system</li>
+                        </ul>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/yourusername/dining-concierge" target="_blank"
+                                class="flex items-center justify-center px-4 py-2 bg-purple-600 text-white rounded-xl hover:bg-purple-700 transition-all">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd"
+                                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                GitHub
+                            </a>
+                            <a href="https://dining-concierge.yourdomain.com" target="_blank"
+                                class="flex items-center justify-center px-4 py-2 bg-gray-700 text-gray-300 rounded-xl hover:bg-gray-600 transition-all">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Collaborative Todo List -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-8 mb-16">
+                <!-- Project Image -->
+                <div class="w-full md:w-1/2">
+                    <div
+                        class="bg-gray-900 h-80 rounded-2xl shadow-xl overflow-hidden hover:shadow-purple-500/20 transition-all">
+                        <div class="grid grid-cols-1 md:grid-cols-2 h-full">
+                            <!-- Chat Interface -->
+                            <div class="relative overflow-hidden">
+                                <img src="./img/todolist/todo.png"
+                                    class="project-image w-full h-full object-cover transform hover:scale-105 transition-all duration-300"
+                                    alt="Chat Application Interface">
+                                <div class="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
+                            </div>
+                            <!-- Server Logs -->
+                            <div class="relative overflow-hidden border-l border-purple-900/30">
+                                <img src="./img/todolist/todo1.png"
+                                    class="project-image w-full h-full object-cover transform hover:scale-105 transition-all duration-300"
+                                    alt="Server Logs Example">
+                                <div class="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Info -->
+                <div class="w-full md:w-1/2">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-900/30 p-2 rounded-lg">
+                                <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold ml-3 text-gray-100">
+                                Collaborative Todo List
+                            </h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">
+                            Developed a real-time collaborative task management system with concurrent access control
+                            and live
+                            updates for shared household coordination
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">Go</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">SQLite3</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">REST API</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">Chi Router</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">WebSocket</span>
+                        </div>
+                        <ul class="list-disc pl-5 text-gray-400 space-y-2 mb-6">
+                            <li>Mutex-based concurrency control for safe task updates</li>
+                            <li>Real-time notifications using WebSocket synchronization</li>
+                            <li>RESTful API with efficient CRUD operations</li>
+                        </ul>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/yourusername/todo-app" target="_blank"
+                                class="flex items-center justify-center px-4 py-2 bg-purple-600 text-white rounded-xl hover:bg-purple-700 transition-all">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd"
+                                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                GitHub
+                            </a>
+                            <a href="https://todo.nithish.net/" target="_blank"
+                                class="flex items-center justify-center px-4 py-2 bg-gray-700 text-gray-300 rounded-xl hover:bg-gray-600 transition-all">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ad-Free Manga Reader -->
+            <div class="flex flex-col md:flex-row items-center gap-8 mb-16">
+                <!-- Project Image -->
+                <div class="w-full md:w-1/2">
+                    <div
+                        class="bg-gray-900 h-80 rounded-2xl shadow-xl overflow-hidden hover:shadow-purple-500/20 transition-all">
+                        <div class="grid grid-cols-1 md:grid-cols-2 h-full">
+                            <!-- Chat Interface -->
+                            <div class="relative overflow-hidden">
+                                <img src="./img/manga/manga.png"
+                                    class="project-image w-full h-full object-cover transform hover:scale-105 transition-all duration-300"
+                                    alt="Chat Application Interface">
+                                <div class="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
+                            </div>
+                            <!-- Server Logs -->
+                            <div class="relative overflow-hidden border-l border-purple-900/30">
+                                <img src="./img/manga/mangalog.png"
+                                    class="project-image w-full h-full object-cover transform hover:scale-105 transition-all duration-300"
+                                    alt="Server Logs Example">
+                                <div class="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Info -->
+                <div class="w-full md:w-1/2">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-900/30 p-2 rounded-lg">
+                                <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold ml-3 text-gray-100">
+                                Ad-Free Manga Reader
+                            </h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">
+                            Developed a streamlined manga reading platform with content
+                            caching and offline reading capabilities for an optimized,
+                            ad-free reading experience
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">Go</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">REST API</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">PostgreSQL</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">Tailwind CSS</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">Docker</span>
+                        </div>
+                        <ul class="list-disc pl-5 text-gray-400 space-y-2 mb-6">
+                            <li>70% faster load times with image caching system</li>
+                            <li>RESTful API for manga metadata management</li>
+                            <li>Responsive UI with infinite scroll and preloading</li>
+                        </ul>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/yourusername/manga-reader" target="_blank"
+                                class="flex items-center justify-center px-4 py-2 bg-purple-600 text-white rounded-xl hover:bg-purple-700 transition-all">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd"
+                                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                GitHub
+                            </a>
+                            <a href="https://manga-reader.yourdomain.com" target="_blank"
+                                class="flex items-center justify-center px-4 py-2 bg-gray-700 text-gray-300 rounded-xl hover:bg-gray-600 transition-all">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Collaborative Todo List -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-8 mb-16">
+                <!-- Project Image -->
+                <div class="w-full md:w-1/2">
+                    <div
+                        class="bg-gray-900 h-80 rounded-2xl shadow-xl overflow-hidden hover:shadow-purple-500/20 transition-all">
+                        <div class="grid grid-cols-1 md:grid-cols-2 h-full">
+                            <!-- Chat Interface -->
+                            <div class="relative overflow-hidden">
+                                <img src="./img/weatherapp/weather.png"
+                                    class="project-image w-full h-full object-cover transform hover:scale-105 transition-all duration-300"
+                                    alt="Chat Application Interface">
+                                <div class="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
+                            </div>
+                            <!-- Server Logs -->
+                            <div class="relative overflow-hidden border-l border-purple-900/30">
+                                <img src="./img/weatherapp/weather1.png"
+                                    class="project-image w-full h-full object-cover transform hover:scale-105 transition-all duration-300"
+                                    alt="Server Logs Example">
+                                <div class="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Info -->
+                <div class="w-full md:w-1/2">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-900/30 p-2 rounded-lg">
+                                <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold ml-3 text-gray-100">
+                                Weather Forecast Application
+                            </h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">
+                            Built a high-performance weather forecasting system with
+                            intelligent location detection and real-time weather updates
+                            using OpenWeatherMap API
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">Go</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">Tailwind CSS</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">REST API</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">Chi Router</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">Docker</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">AWS App
+                                Runner</span>
+                        </div>
+                        <ul class="list-disc pl-5 text-gray-400 space-y-2 mb-6">
+                            <li>Multi-layer location detection system</li>
+                            <li>50+ requests/sec handling with Go concurrency</li>
+                            <li>99.9% uptime with Route53 failover routing</li>
+                        </ul>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/yourusername/todo-app" target="_blank"
+                                class="flex items-center justify-center px-4 py-2 bg-purple-600 text-white rounded-xl hover:bg-purple-700 transition-all">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd"
+                                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                GitHub
+                            </a>
+                            <a href="https://todo.nithish.net/" target="_blank"
+                                class="flex items-center justify-center px-4 py-2 bg-gray-700 text-gray-300 rounded-xl hover:bg-gray-600 transition-all">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Real-Time Multiplayer Tic Tac Toe -->
+            <div class="flex flex-col md:flex-row items-center gap-8 mb-16">
+                <!-- Project Image -->
+                <div class="w-full md:w-1/2">
+                    <div
+                        class="bg-gray-900 h-80 rounded-2xl shadow-xl overflow-hidden hover:shadow-purple-500/20 transition-all">
+                        <div class="grid grid-cols-1 md:grid-cols-2 h-full">
+                            <!-- Architure Interface -->
+                            <div class="relative overflow-hidden">
+                                <img src="./img/tictactoe/tictactoe.png"
+                                    class="project-image w-full h-full object-cover transform hover:scale-105 transition-all duration-300"
+                                    alt="Chat Application Interface">
+                                <div class="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
+                            </div>
+                            <!-- Server Logs -->
+                            <div class="relative overflow-hidden border-l border-purple-900/30">
+                                <img src="./img/tictactoe/tictactoe1.png"
+                                    class="project-image w-full h-full object-cover transform hover:scale-105 transition-all duration-300"
+                                    alt="Server Logs Example">
+                                <div class="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Other contact links -->
+                <!-- Project Info (Right Side) -->
+                <div class="w-full md:w-1/2">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-900/30 p-2 rounded-lg">
+                                <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14.828 14.828a4 4 0 01-5.656 0M9.172 9.172a4 4 0 015.656 0M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold ml-3 text-gray-100">
+                                Real-Time Multiplayer Tic Tac Toe
+                            </h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">
+                            Built a cross-platform multiplayer Tic Tac Toe game with
+                            real-time gameplay using WebSocket for seamless player
+                            interaction and move synchronization
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">Go</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">WebSocket</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">JavaScript</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">HTML/CSS</span>
+                            <span class="px-2 py-1 bg-gray-700 text-purple-400 rounded-md text-sm">Docker</span>
+                        </div>
+                        <ul class="list-disc pl-5 text-gray-400 space-y-2 mb-6">
+                            <li>Real-time game state synchronization</li>
+                            <li>Matchmaking system and game room management</li>
+                            <li>Responsive UI with instant validation updates</li>
+                        </ul>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/yourusername/tic-tac-toe" target="_blank"
+                                class="flex items-center justify-center px-4 py-2 bg-purple-600 text-white rounded-xl hover:bg-purple-700 transition-all">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd"
+                                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                GitHub
+                            </a>
+                            <a href="https://tictactoe.nithish.net/" target="_blank"
+                                class="flex items-center justify-center px-4 py-2 bg-gray-700 text-gray-300 rounded-xl hover:bg-gray-600 transition-all">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+    </section>
+
+
+    <section id="contact" class="py-16 bg-gradient-to-r from-purple-900 to-violet-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-4xl font-bold text-white mb-8">
+                    Let's Brew Something Together
+                </h2>
+                <h3 class="text-lg text-purple-200 mb-8">
+                    ☕ Available for collaborations and coffee chats
+                </h3>
+
+                <!-- Contact links -->
                 <div class="flex justify-center space-x-8">
-                    <a href="tel:206-226-8935" class="flex items-center text-gray-700 hover:text-blue-600">
+                    <a href="mailto:nithish952001@gmail.com"
+                        class="flex items-center text-purple-200 hover:text-purple-300 transition-colors">
+                        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        Email
+                    </a>
+
+                    <a href="tel:206-226-8935" class="flex items-center text-purple-200 hover:text-purple-300 transition-colors">
                         <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                         </svg>
                         Phone
                     </a>
+
                     <a href="https://linkedin.com/in/nithish-suresh-babu" target="_blank"
-                        class="flex items-center text-gray-700 hover:text-blue-600">
+                        class="flex items-center text-purple-200 hover:text-purple-300 transition-colors">
                         <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
@@ -989,10 +1025,10 @@
         </div>
     </section>
 
-    <!-- Footer with Copyright -->
-    <footer class="py-8 bg-gray-100">
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center text-gray-600">
+            <div class="text-center text-gray-400">
                 <p>&copy; 2024 nithish.net All rights reserved.</p>
             </div>
         </div>

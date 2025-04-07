@@ -1,0 +1,51 @@
+# General
+.DS_Store
+Thumbs.db
+*.log
+*.swp
+*.swo
+*~
+
+# Dependencies
+/node_modules/
+/venv/
+/bin/
+/go/bin/
+.env
+.env.local
+*.env
+
+# Build files
+/dist/
+/build/
+*.exe
+*.dll
+*.so
+*.a
+
+# Go modules
+/go.mod
+/go.sum
+
+# Editor directories
+.vscode/
+.idea/
+
+# OS generated
+ehthumbs.db
+[Tt]humbs.db
+
+# Project specific ignores
+/test/*
+!/test/README.md  # Keep README if exists
+
+# Ignore all PDFs except resumes
+*.pdf
+!/Resumes/*.pdf
+
+# Temporary files
+*.tmp
+*.temp
+
+# Optional: Ignore image assets if not tracking (modify as needed)
+# /img/*
