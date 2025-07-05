@@ -10,7 +10,7 @@
         content="Portfolio of Nithish Suresh, showcasing professional experience, skills, and projects." />
     <link rel="icon" type="image/png" href="./favicon_io/favicon-32x32.png" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./dist/output.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -143,40 +143,7 @@
              color: #000000 !important;
         }
 
-        /* Modal styles */
-        .modal-backdrop {
-            background-color: rgba(0,0,0,0.7); /* Darker backdrop for better contrast */
-        }
-        .modal-content-area {
-             max-height: 60vh; /* Limit height and make scrollable */
-             overflow-y: auto;
-             white-space: pre-wrap; /* Preserve line breaks from LLM */
-             border: 1px solid #ccc; /* Add border to content area */
-             padding: 1rem;
-             background-color: #fff; /* White background for readability */
-             border-radius: 0.375rem; /* rounded-md */
-        }
-        .modal-title {
-            font-family: 'EB Garamond', serif; /* Ensure title uses the theme font */
-            font-weight: bold;
-        }
-        .modal-body-text {
-            font-family: 'EB Garamond', serif;
-            color: #222222; /* Consistent with newsletter-text-body */
-        }
-        .loading-spinner {
-            border: 4px solid #f3f3f3; /* Light grey */
-            border-top: 4px solid #333333; /* Black */
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            animation: spin 1s linear infinite;
-            margin: 20px auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+        
 
     </style>
 </head>
@@ -219,7 +186,7 @@
             <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 newsletter-text-header animate-fadeInUp">Nithish Suresh</h1>
             <div class="space-y-3 mb-10 animate-fadeIn">
                 <p class="text-2xl sm:text-3xl newsletter-text-subheader">Software Developer</p>
-                <p class="text-xl sm:text-2xl newsletter-text-body">Building scalable cloud solutions and intelligent systems</p>
+                <p class="text-xl sm:text-2xl newsletter-text-body">Building Scalable Applications and Cloud Solutions and Intelligent Systems</p>
             </div>
             <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 animate-fadeIn" style="animation-delay: 0.8s;">
                 <a href="#contact"
@@ -231,7 +198,7 @@
                     Contact Me
                 </a>
                 <div class="relative inline-block text-left w-full sm:w-auto" id="resumeDropdown">
-                    <button onclick="toggleResumeDropdown()"
+                    <button id="resumeDropdownButton"
                         class="flex items-center justify-center newsletter-button-secondary px-6 py-3 sm:px-8 sm:py-4 rounded-lg transition-all w-full sm:w-auto shadow-md hover:shadow-gray-500/30">
                         <svg class="w-5 h-5 sm:w-6 sm:h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -284,14 +251,12 @@
                             <span class="newsletter-text-body">AWS Solutions Architect</span>
                         </div>
                     </div>
-                    <!-- <button id="revealPersonaBtn" class="mt-8 newsletter-button-secondary px-6 py-3 rounded-lg shadow-md hover:shadow-gray-400/30 transition-all text-sm font-semibold">
-                        ✨ Reveal My Hogwarts Persona ✨
-                    </button> -->
+                    
                 </div>
                 <div class="flex justify-center">
                     <div
                         class="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-lg overflow-hidden shadow-lg hover:shadow-gray-700/20 transition-all duration-300 border border-gray-300">
-                        <img src="./img/nithish.jpeg" alt="Nithish Suresh"
+                        <img src="./img/optimized/nithish.webp" alt="Nithish Suresh"
                             onerror="this.onerror=null;this.src='https://placehold.co/384x384/FFFFFF/000000?text=Nithish+Suresh';" loading="lazy"
                             class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -332,39 +297,39 @@
                     <h3 class="text-xl font-semibold mb-4 newsletter-accent-text">Languages & Database</h3>
                     <div class="grid grid-cols-2 xs:grid-cols-3 gap-4">
                         <div class="flex flex-col items-center p-2 hover:bg-gray-200 rounded-lg transition-colors">
-                            <i class="devicon-go-original-wordmark text-4xl mb-2 newsletter-icon-color"></i>
+                            <i class="devicon-go-original-wordmark text-4xl mb-2 newsletter-icon-color" aria-hidden="true"></i>
                             <span class="text-sm newsletter-text-body text-center">Golang</span>
                         </div>
                         <div class="flex flex-col items-center p-2 hover:bg-gray-200 rounded-lg transition-colors">
-                            <i class="devicon-python-plain text-4xl mb-2 newsletter-icon-color"></i>
+                            <i class="devicon-python-plain text-4xl mb-2 newsletter-icon-color" aria-hidden="true"></i>
                             <span class="text-sm newsletter-text-body text-center">Python</span>
                         </div>
                         <div class="flex flex-col items-center p-2 hover:bg-gray-200 rounded-lg transition-colors">
-                            <i class="devicon-cplusplus-plain text-4xl mb-2 newsletter-icon-color"></i>
+                            <i class="devicon-cplusplus-plain text-4xl mb-2 newsletter-icon-color" aria-hidden="true"></i>
                             <span class="text-sm newsletter-text-body text-center">C++</span>
                         </div>
                         <div class="flex flex-col items-center p-2 hover:bg-gray-200 rounded-lg transition-colors">
-                            <i class="devicon-c-plain text-4xl mb-2 newsletter-icon-color"></i>
+                            <i class="devicon-c-plain text-4xl mb-2 newsletter-icon-color" aria-hidden="true"></i>
                             <span class="text-sm newsletter-text-body text-center">C</span>
                         </div>
                         <div class="flex flex-col items-center p-2 hover:bg-gray-200 rounded-lg transition-colors">
-                            <i class="devicon-javascript-plain text-4xl mb-2 newsletter-icon-color"></i>
+                            <i class="devicon-javascript-plain text-4xl mb-2 newsletter-icon-color" aria-hidden="true"></i>
                             <span class="text-sm newsletter-text-body text-center">JavaScript</span>
                         </div>
                         <div class="flex flex-col items-center p-2 hover:bg-gray-200 rounded-lg transition-colors">
-                            <i class="devicon-postgresql-plain text-4xl mb-2 newsletter-icon-color"></i>
+                            <i class="devicon-postgresql-plain text-4xl mb-2 newsletter-icon-color" aria-hidden="true"></i>
                             <span class="text-sm newsletter-text-body text-center">PostgreSQL</span>
                         </div>
                         <div class="flex flex-col items-center p-2 hover:bg-gray-200 rounded-lg transition-colors">
-                            <i class="devicon-mysql-plain text-4xl mb-2 newsletter-icon-color"></i>
+                            <i class="devicon-mysql-plain text-4xl mb-2 newsletter-icon-color" aria-hidden="true"></i>
                             <span class="text-sm newsletter-text-body text-center">MySQL</span>
                         </div>
                         <div class="flex flex-col items-center p-2 hover:bg-gray-200 rounded-lg transition-colors">
-                            <i class="devicon-sqlite-plain text-4xl mb-2 newsletter-icon-color"></i>
+                            <i class="devicon-sqlite-plain text-4xl mb-2 newsletter-icon-color" aria-hidden="true"></i>
                             <span class="text-sm newsletter-text-body text-center">SQLite3</span>
                         </div>
                         <div class="flex flex-col items-center p-2 hover:bg-gray-200 rounded-lg transition-colors">
-                            <i class="devicon-amazonwebservices-plain text-4xl mb-2 newsletter-icon-color"></i>
+                            <i class="devicon-amazonwebservices-plain text-4xl mb-2 newsletter-icon-color" aria-hidden="true"></i>
                             <span class="text-sm newsletter-text-body text-center">DynamoDB</span>
                         </div>
                     </div>
@@ -374,39 +339,39 @@
                     <h3 class="text-xl font-semibold mb-4 newsletter-accent-text">Cloud & DevOps</h3>
                     <div class="grid grid-cols-2 xs:grid-cols-3 gap-4">
                         <div class="flex flex-col items-center p-2 hover:bg-gray-200 rounded-lg transition-colors">
-                            <i class="devicon-googlecloud-plain text-4xl mb-2 newsletter-icon-color"></i>
+                            <i class="devicon-googlecloud-plain text-4xl mb-2 newsletter-icon-color" aria-hidden="true"></i>
                             <span class="text-sm newsletter-text-body text-center">Google Cloud</span>
                         </div>
                         <div class="flex flex-col items-center p-2 hover:bg-gray-200 rounded-lg transition-colors">
-                            <i class="devicon-amazonwebservices-plain text-4xl mb-2 newsletter-icon-color"></i>
+                            <i class="devicon-amazonwebservices-plain text-4xl mb-2 newsletter-icon-color" aria-hidden="true"></i>
                             <span class="text-sm newsletter-text-body text-center">AWS</span>
                         </div>
                         <div class="flex flex-col items-center p-2 hover:bg-gray-200 rounded-lg transition-colors">
-                            <i class="devicon-docker-plain text-4xl mb-2 newsletter-icon-color"></i>
+                            <i class="devicon-docker-plain text-4xl mb-2 newsletter-icon-color" aria-hidden="true"></i>
                             <span class="text-sm newsletter-text-body text-center">Docker</span>
                         </div>
                         <div class="flex flex-col items-center p-2 hover:bg-gray-200 rounded-lg transition-colors">
-                            <i class="devicon-kubernetes-plain text-4xl mb-2 newsletter-icon-color"></i>
+                            <i class="devicon-kubernetes-plain text-4xl mb-2 newsletter-icon-color" aria-hidden="true"></i>
                             <span class="text-sm newsletter-text-body text-center">Kubernetes</span>
                         </div>
                         <div class="flex flex-col items-center p-2 hover:bg-gray-200 rounded-lg transition-colors">
-                            <i class="devicon-git-plain text-4xl mb-2 newsletter-icon-color"></i>
+                            <i class="devicon-git-plain text-4xl mb-2 newsletter-icon-color" aria-hidden="true"></i>
                             <span class="text-sm newsletter-text-body text-center">Git</span>
                         </div>
                         <div class="flex flex-col items-center p-2 hover:bg-gray-200 rounded-lg transition-colors">
-                            <i class="devicon-github-plain text-4xl mb-2 newsletter-icon-color"></i>
+                            <i class="devicon-github-plain text-4xl mb-2 newsletter-icon-color" aria-hidden="true"></i>
                             <span class="text-sm newsletter-text-body text-center">GitHub</span>
                         </div>
                         <div class="flex flex-col items-center p-2 hover:bg-gray-200 rounded-lg transition-colors">
-                            <i class="devicon-redis-plain text-4xl mb-2 newsletter-icon-color"></i>
+                            <i class="devicon-redis-plain text-4xl mb-2 newsletter-icon-color" aria-hidden="true"></i>
                             <span class="text-sm newsletter-text-body text-center">Redis</span>
                         </div>
                         <div class="flex flex-col items-center p-2 hover:bg-gray-200 rounded-lg transition-colors">
-                            <i class="fas fa-server text-4xl mb-2 newsletter-icon-color"></i>
+                            <i class="fas fa-server text-4xl mb-2 newsletter-icon-color" aria-hidden="true"></i>
                             <span class="text-sm newsletter-text-body text-center">Cloud Run</span>
                         </div>
                         <div class="flex flex-col items-center p-2 hover:bg-gray-200 rounded-lg transition-colors">
-                            <i class="fas fa-database text-4xl mb-2 newsletter-icon-color"></i>
+                            <i class="fas fa-database text-4xl mb-2 newsletter-icon-color" aria-hidden="true"></i>
                             <span class="text-sm newsletter-text-body text-center">Bigtable</span>
                         </div>
                     </div>
@@ -416,27 +381,27 @@
                     <h3 class="text-xl font-semibold mb-4 newsletter-accent-text">AI/ML</h3>
                     <div class="grid grid-cols-2 xs:grid-cols-3 gap-4">
                         <div class="flex flex-col items-center p-2 hover:bg-gray-200 rounded-lg transition-colors">
-                            <i class="fas fa-robot text-4xl mb-2 newsletter-icon-color"></i>
+                            <i class="fas fa-robot text-4xl mb-2 newsletter-icon-color" aria-hidden="true"></i>
                             <span class="text-sm newsletter-text-body text-center">Ollama</span>
                         </div>
                         <div class="flex flex-col items-center p-2 hover:bg-gray-200 rounded-lg transition-colors">
-                            <i class="fas fa-link text-4xl mb-2 newsletter-icon-color"></i>
+                            <i class="fas fa-link text-4xl mb-2 newsletter-icon-color" aria-hidden="true"></i>
                             <span class="text-sm newsletter-text-body text-center">LangChain</span>
                         </div>
                         <div class="flex flex-col items-center p-2 hover:bg-gray-200 rounded-lg transition-colors">
-                            <i class="fas fa-brain text-4xl mb-2 newsletter-icon-color"></i>
+                            <i class="fas fa-brain text-4xl mb-2 newsletter-icon-color" aria-hidden="true"></i>
                             <span class="text-sm newsletter-text-body text-center">OpenAI</span>
                         </div>
                         <div class="flex flex-col items-center p-2 hover:bg-gray-200 rounded-lg transition-colors">
-                            <i class="devicon-pytorch-plain text-4xl mb-2 newsletter-icon-color"></i>
+                            <i class="devicon-pytorch-plain text-4xl mb-2 newsletter-icon-color" aria-hidden="true"></i>
                             <span class="text-sm newsletter-text-body text-center">PyTorch</span>
                         </div>
                         <div class="flex flex-col items-center p-2 hover:bg-gray-200 rounded-lg transition-colors">
-                            <i class="fas fa-eye text-4xl mb-2 newsletter-icon-color"></i>
+                            <i class="fas fa-eye text-4xl mb-2 newsletter-icon-color" aria-hidden="true"></i>
                             <span class="text-sm newsletter-text-body text-center">OpenCV</span>
                         </div>
                         <div class="flex flex-col items-center p-2 hover:bg-gray-200 rounded-lg transition-colors">
-                             <i class="fas fa-cogs text-4xl mb-2 newsletter-icon-color"></i>
+                             <i class="fas fa-cogs text-4xl mb-2 newsletter-icon-color" aria-hidden="true"></i>
                             <span class="text-sm newsletter-text-body text-center">TensorFlow</span>
                         </div>
                     </div>
@@ -452,11 +417,11 @@
             <div class="flex flex-col md:flex-row items-stretch gap-8 mb-16 bg-white p-4 sm:p-6 rounded-lg newsletter-card-bg">
                 <div class="w-full md:w-1/2 self-center">
                     <div class="bg-gray-200 aspect-video md:aspect-square rounded-lg shadow-md overflow-hidden hover:shadow-gray-400/20 transition-shadow duration-300 border border-gray-300">
-                         <img src="./img/chatapp/chat.png"
+                         <img src="./img/optimized/chatapp/chat.webp"
                              alt="Chat Application"
                              loading="lazy"
-                             class="project-image w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
-                             alt="Chat Application Interface">
+                             class="project-image w-full h-full object-cover transform hover:scale-105 transition-transform duration-300">
+                             
                     </div>
                 </div>
                 <div class="w-full md:w-1/2 flex flex-col justify-center">
@@ -485,11 +450,11 @@
                             <li>Implemented fault tolerance with Docker containerization</li>
                         </ul>
                         <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-                            <a href="https://github.com/yourusername/chat-system" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center newsletter-button-primary px-4 py-2 rounded-lg transition-all text-sm">
+                            <a id="chatAppGithub" href="#" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center newsletter-button-primary px-4 py-2 rounded-lg transition-all text-sm">
                                 <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
                                 GitHub
                             </a>
-                            <a href="https://your-chat-app-demo.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center newsletter-button-secondary px-4 py-2 rounded-lg transition-all text-sm">
+                            <a id="chatAppLiveDemo" href="#" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center newsletter-button-secondary px-4 py-2 rounded-lg transition-all text-sm">
                                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                                 Live Demo
                             </a>
@@ -500,8 +465,8 @@
 
             <div class="flex flex-col md:flex-row-reverse items-stretch gap-8 mb-16 bg-white p-4 sm:p-6 rounded-lg newsletter-card-bg">
                 <div class="w-full md:w-1/2 self-center">
-                     <div class="bg-gray-200 aspect-video md:aspect-square rounded-lg shadow-md overflow-hidden hover:shadow-gray-400/20 transition-shadow duration-300 border border-gray-300">
-                         <img src="./img/smartDoor/architecture.png"
+                     <div class="bg-gray-200 aspect-video rounded-lg shadow-md overflow-hidden hover:shadow-gray-400/20 transition-shadow duration-300 border border-gray-300">
+                         <img src="./img/optimized/smartDoor/architecture.webp"
                              onerror="this.onerror=null;this.src='https://placehold.co/600x400/E5E7EB/000000?text=Smart+Door+System';" loading="lazy"
                              class="project-image w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
                              alt="Smart Door Security System Architecture">
@@ -532,7 +497,7 @@
                             <li>Real-time notifications for unauthorized access attempts</li>
                         </ul>
                         <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-                                <a href="https://github.com/yourusername/smart-door" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center newsletter-button-primary px-4 py-2 rounded-lg transition-all text-sm">
+                                <a id="smartDoorGithub" href="#" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center newsletter-button-primary px-4 py-2 rounded-lg transition-all text-sm">
                                 <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
                                 GitHub
                             </a>
@@ -543,10 +508,10 @@
 
             <div class="flex flex-col md:flex-row items-stretch gap-8 mb-16 bg-white p-4 sm:p-6 rounded-lg newsletter-card-bg">
                 <div class="w-full md:w-1/2 self-center">
-                    <div class="bg-gray-200 aspect-video md:aspect-square rounded-lg shadow-md overflow-hidden hover:shadow-gray-400/20 transition-shadow duration-300 border border-gray-300">
-                        <img src="./img/Dining/diningbot.png"
+                    <div class="bg-gray-200 aspect-video rounded-lg shadow-md overflow-hidden hover:shadow-gray-400/20 transition-shadow duration-300 border border-gray-300">
+                        <img src="./img/optimized/Dining/diningbot.webp"
                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/E5E7EB/000000?text=AI+Dining+Bot';" loading="lazy"
-                            class="project-image w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+                            class="project-image w-full h-full object-contain transform hover:scale-105 transition-transform duration-300"
                             alt="AI Dining Concierge Interface">
                     </div>
                 </div>
@@ -576,11 +541,11 @@
                             <li>Integrated automated SMS notification system</li>
                         </ul>
                         <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-                                <a href="https://github.com/yourusername/dining-concierge" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center newsletter-button-primary px-4 py-2 rounded-lg transition-all text-sm">
+                                <a id="diningConciergeGithub" href="#" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center newsletter-button-primary px-4 py-2 rounded-lg transition-all text-sm">
                                 <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
                                 GitHub
                             </a>
-                            <a href="https://dining-concierge.yourdomain.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center newsletter-button-secondary px-4 py-2 rounded-lg transition-all text-sm">
+                            <a id="diningConciergeLiveDemo" href="#" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center newsletter-button-secondary px-4 py-2 rounded-lg transition-all text-sm">
                                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                                 Live Demo
                             </a>
@@ -591,10 +556,10 @@
 
             <div class="flex flex-col md:flex-row-reverse items-stretch gap-8 mb-16 bg-white p-4 sm:p-6 rounded-lg newsletter-card-bg">
                 <div class="w-full md:w-1/2 self-center">
-                    <div class="bg-gray-200 aspect-video md:aspect-square rounded-lg shadow-md overflow-hidden hover:shadow-gray-400/20 transition-shadow duration-300 border border-gray-300">
-                        <img src="./img/todolist/todo.png"
+                    <div class="bg-gray-200 aspect-video rounded-lg shadow-md overflow-hidden hover:shadow-gray-400/20 transition-shadow duration-300 border border-gray-300">
+                        <img src="./img/optimized/todolist/todo1.webp"
                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/E5E7EB/000000?text=Todo+List+App';" loading="lazy"
-                            class="project-image w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+                            class="project-image w-full h-full object-contain transform hover:scale-105 transition-transform duration-300"
                             alt="Collaborative Todo List Interface">
                     </div>
                 </div>
@@ -624,11 +589,11 @@
                             <li>RESTful API with efficient CRUD operations</li>
                         </ul>
                         <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-                                <a href="https://github.com/yourusername/todo-app" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center newsletter-button-primary px-4 py-2 rounded-lg transition-all text-sm">
+                                <a id="todoListGithub" href="#" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center newsletter-button-primary px-4 py-2 rounded-lg transition-all text-sm">
                                 <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
                                 GitHub
                             </a>
-                            <a href="https://todo.nithish.net/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center newsletter-button-secondary px-4 py-2 rounded-lg transition-all text-sm">
+                            <a id="todoListLiveDemo" href="#" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center newsletter-button-secondary px-4 py-2 rounded-lg transition-all text-sm">
                                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                                 Live Demo
                             </a>
@@ -639,10 +604,10 @@
 
             <div class="flex flex-col md:flex-row items-stretch gap-8 mb-16 bg-white p-4 sm:p-6 rounded-lg newsletter-card-bg">
                 <div class="w-full md:w-1/2 self-center">
-                    <div class="bg-gray-200 aspect-video md:aspect-square rounded-lg shadow-md overflow-hidden hover:shadow-gray-400/20 transition-shadow duration-300 border border-gray-300">
-                        <img src="./img/manga/manga.png"
+                    <div class="bg-gray-200 aspect-video rounded-lg shadow-md overflow-hidden hover:shadow-gray-400/20 transition-shadow duration-300 border border-gray-300">
+                        <img src="./img/optimized/manga/manga.webp"
                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/E5E7EB/000000?text=Manga+Reader+UI';" loading="lazy"
-                            class="project-image w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+                            class="project-image w-full h-full object-contain transform hover:scale-105 transition-transform duration-300"
                             alt="Ad-Free Manga Reader Interface">
                     </div>
                 </div>
@@ -672,11 +637,11 @@
                             <li>Responsive UI with infinite scroll and preloading</li>
                         </ul>
                         <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-                                <a href="https://github.com/yourusername/manga-reader" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center newsletter-button-primary px-4 py-2 rounded-lg transition-all text-sm">
+                                <a id="mangaReaderGithub" href="#" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center newsletter-button-primary px-4 py-2 rounded-lg transition-all text-sm">
                                 <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
                                 GitHub
                             </a>
-                            <a href="https://manga-reader.yourdomain.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center newsletter-button-secondary px-4 py-2 rounded-lg transition-all text-sm">
+                            <a id="mangaReaderLiveDemo" href="#" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center newsletter-button-secondary px-4 py-2 rounded-lg transition-all text-sm">
                                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                                 Live Demo
                             </a>
@@ -687,8 +652,8 @@
 
             <div class="flex flex-col md:flex-row-reverse items-stretch gap-8 mb-16 bg-white p-4 sm:p-6 rounded-lg newsletter-card-bg">
                 <div class="w-full md:w-1/2 self-center">
-                    <div class="bg-gray-200 aspect-video md:aspect-square rounded-lg shadow-md overflow-hidden hover:shadow-gray-400/20 transition-shadow duration-300 border border-gray-300">
-                        <img src="./img/weatherapp/weather.png"
+                    <div class="bg-gray-200 aspect-video rounded-lg shadow-md overflow-hidden hover:shadow-gray-400/20 transition-shadow duration-300 border border-gray-300">
+                        <img src="./img/optimized/weatherapp/weather1.webp"
                              onerror="this.onerror=null;this.src='https://placehold.co/600x400/E5E7EB/000000?text=Weather+App+UI';" loading="lazy"
                              class="project-image w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
                              alt="Weather Forecast Application Interface">
@@ -721,11 +686,11 @@
                             <li>99.9% uptime with Route53 failover routing</li>
                         </ul>
                         <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-                                <a href="https://github.com/yourusername/weather-app" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center newsletter-button-primary px-4 py-2 rounded-lg transition-all text-sm">
+                                <a id="weatherAppGithub" href="#" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center newsletter-button-primary px-4 py-2 rounded-lg transition-all text-sm">
                                 <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
                                 GitHub
                             </a>
-                            <a href="https://weather.nithish.net/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center newsletter-button-secondary px-4 py-2 rounded-lg transition-all text-sm">
+                            <a id="weatherAppLiveDemo" href="#" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center newsletter-button-secondary px-4 py-2 rounded-lg transition-all text-sm">
                                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                                 Live Demo
                             </a>
@@ -736,10 +701,10 @@
 
             <div class="flex flex-col md:flex-row items-stretch gap-8 mb-16 bg-white p-4 sm:p-6 rounded-lg newsletter-card-bg">
                 <div class="w-full md:w-1/2 self-center">
-                    <div class="bg-gray-200 aspect-video md:aspect-square rounded-lg shadow-md overflow-hidden hover:shadow-gray-400/20 transition-shadow duration-300 border border-gray-300">
-                        <img src="./img/tictactoe/tictactoe1.png"
+                    <div class="bg-gray-200 aspect-video rounded-lg shadow-md overflow-hidden hover:shadow-gray-400/20 transition-shadow duration-300 border border-gray-300">
+                        <img src="./img/optimized/tictactoe/tictactoe1.webp"
                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/E5E7EB/000000?text=TicTacToe+Game';" loading="lazy"
-                            class="project-image w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+                            class="project-image w-full h-full object-contain transform hover:scale-105 transition-transform duration-300"
                             alt="Multiplayer Tic Tac Toe Game Interface">
                     </div>
                 </div>
@@ -769,11 +734,11 @@
                             <li>Responsive UI with instant validation updates</li>
                         </ul>
                         <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-                                <a href="https://github.com/yourusername/tic-tac-toe" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center newsletter-button-primary px-4 py-2 rounded-lg transition-all text-sm">
+                                <a id="ticTacToeGithub" href="#" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center newsletter-button-primary px-4 py-2 rounded-lg transition-all text-sm">
                                 <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
                                 GitHub
                             </a>
-                            <a href="https://tictactoe.nithish.net/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center newsletter-button-secondary px-4 py-2 rounded-lg transition-all text-sm">
+                            <a id="ticTacToeLiveDemo" href="#" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center newsletter-button-secondary px-4 py-2 rounded-lg transition-all text-sm">
                                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                                 Live Demo
                             </a>
@@ -793,7 +758,7 @@
                     <form action="https://api.web3forms.com/submit" method="POST">
                         <input type="hidden" name="access_key" value="2c827b37-2a62-4d15-a125-0f55c9cb4965">
                         <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio">
-                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                        <input type="checkbox" name="botcheck" class="hidden" aria-hidden="true">
 
                         <div class="mb-6">
                             <label class="block newsletter-text-body mb-2" for="name">Your Name</label>
@@ -876,124 +841,10 @@
         </div>
     </footer>
 
-    <div id="personaModal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4 modal-backdrop">
-        <div class="bg-white p-6 rounded-lg shadow-xl max-w-xl w-full newsletter-card-bg border-2 border-black">
-            <div class="flex justify-between items-center mb-4">
-                <h3 class="text-2xl modal-title newsletter-text-header">Your Hogwarts Persona</h3>
-                <button id="closePersonaModalBtn" class="text-black hover:text-gray-700 text-2xl leading-none">&times;</button>
-            </div>
-            <div id="personaModalContentContainer" class="modal-content-area">
-                <div id="personaLoading" class="text-center">
-                    <div class="loading-spinner"></div>
-                    <p class="newsletter-text-body">Conjuring your magical profile from the digital ether...</p>
-                </div>
-                <div id="personaModalText" class="newsletter-text-body hidden"></div>
-                <div id="personaErrorText" class="newsletter-text-body text-red-600 hidden"></div>
-            </div>
-            <div class="mt-6 text-right">
-                 <button id="copyPersonaBtn" class="newsletter-button-secondary px-4 py-2 rounded-lg text-sm mr-2 hidden">Copy Persona</button>
-                <button id="regeneratePersonaBtn" class="newsletter-button-secondary px-4 py-2 rounded-lg text-sm mr-2 hidden">✨ Regenerate ✨</button>
-            </div>
-        </div>
-    </div>
-    <textarea id="copyHelper" style="opacity:0; position:absolute; pointer-events:none; z-index:-1;"></textarea>
+    
 
 
-    <script>
-        // Resume Download Dropdown functionality
-        function toggleResumeDropdown() {
-            const dropdown = document.getElementById('dropdownContent');
-            dropdown.classList.toggle('hidden');
-        }
-
-        document.addEventListener('click', function (event) {
-            const dropdownContainer = document.getElementById('resumeDropdown');
-            const dropdownContent = document.getElementById('dropdownContent');
-            if (dropdownContainer && !dropdownContainer.contains(event.target) && dropdownContent && !dropdownContent.classList.contains('hidden')) {
-                dropdownContent.classList.add('hidden');
-            }
-        });
-
-        // Smooth scroll functionality & Mobile menu close
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-
-                if (targetElement) {
-                    const mobileMenu = document.getElementById('mobile-menu');
-                    const mobileMenuButton = document.getElementById('mobile-menu-button');
-                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                        if (mobileMenuButton) {
-                            mobileMenuButton.setAttribute('aria-expanded', 'false');
-                        }
-                    }
-                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            // Mobile menu toggle
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', (event) => {
-                    event.stopPropagation();
-                    const isHidden = mobileMenu.classList.toggle('hidden');
-                    mobileMenuButton.setAttribute('aria-expanded', !isHidden);
-                });
-            }
-
-            // Web3Forms Submission
-            const web3form = document.querySelector('#contact form');
-            const formStatus = document.getElementById('form-status');
-
-            if (web3form && formStatus) {
-                web3form.addEventListener('submit', async function (e) {
-                    e.preventDefault();
-                    const formData = new FormData(web3form);
-                    const object = {};
-                    formData.forEach((value, key) => { object[key] = value; });
-                    const json = JSON.stringify(object);
-
-                    formStatus.textContent = "Sending...";
-                    formStatus.className = 'mt-4 text-center text-sm text-gray-600';
-
-                    try {
-                        const response = await fetch('https://api.web3forms.com/submit', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'Accept': 'application/json'
-                            },
-                            body: json
-                        });
-                        const result = await response.json();
-                        if (result.success) {
-                            formStatus.textContent = "Message sent successfully!";
-                            formStatus.className = 'mt-4 text-center text-sm text-green-700';
-                            web3form.reset();
-                        } else {
-                            formStatus.textContent = result.message || "Oops! Something went wrong.";
-                            formStatus.className = 'mt-4 text-center text-sm text-red-700';
-                        }
-                    } catch (error) {
-                        console.error('Form submission error:', error);
-                        formStatus.textContent = "Oops! Something went wrong. Please try again.";
-                        formStatus.className = 'mt-4 text-center text-sm text-red-700';
-                    }
-                });
-            }
-
-            // Dynamic Year in Footer
-            const currentYearSpan = document.getElementById('currentYear');
-            if (currentYearSpan) {
-                currentYearSpan.textContent = new Date().getFullYear();
-            }
-        });
-    </script>
+    <script src="config.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
