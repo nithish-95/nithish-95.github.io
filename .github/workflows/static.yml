@@ -38,7 +38,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build CSS
-        run: npm exec tailwindcss -i ./input.css -o ./dist/output.css --minify
+        run: ./node_modules/.bin/tailwindcss -i ./input.css -o ./dist/output.css --minify
       - name: Optimize Images
         run: npm run optimize:images
       - name: Setup Pages
