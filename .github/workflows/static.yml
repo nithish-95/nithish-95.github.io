@@ -37,8 +37,10 @@ jobs:
           node-version: 20
       - name: Install dependencies
         run: npm install
+      - name: Add node_modules to PATH
+        run: echo "$GITHUB_WORKSPACE/node_modules/.bin" >> $GITHUB_PATH
       - name: Build CSS
-        run: ./node_modules/.bin/tailwindcss -i ./input.css -o ./dist/output.css --minify
+        run: npm run build:css
       - name: Optimize Images
         run: npm run optimize:images
       - name: Setup Pages
