@@ -40,7 +40,7 @@ jobs:
       - name: Add node_modules to PATH
         run: echo "$GITHUB_WORKSPACE/node_modules/.bin" >> $GITHUB_PATH
       - name: Build CSS
-        run: npm run build:css
+        run: npx tailwindcss -i ./input.css -o ./dist/output.css --minify
       - name: Optimize Images
         run: npm run optimize:images
       - name: Setup Pages
