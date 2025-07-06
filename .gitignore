@@ -16,7 +16,7 @@ Thumbs.db
 *.env
 
 # Build files
-/dist/
+
 /build/
 *.exe
 *.dll
