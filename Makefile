@@ -1,4 +1,4 @@
-.PHONY: update clean s build
+.PHONY: update clean s
 
 # Default commit message if none is provided
 m ?= "Update files"
@@ -30,13 +30,6 @@ help:
 	@echo "  u: Adds, commits, and pushes changes.  Use 'make update MSG=\"Your commit message\"."
 	@echo "  c: Removes untracked files and resets to last commit. USE WITH CAUTION!"
 	@echo "  s: Display the current status of your git repository."
-	@echo "  build: Builds the frontend assets (Tailwind CSS)."
 	@echo "  help: Show this help message."
-
-build:
-	@echo "Building frontend assets..."
-	@npm run build:css
-	@npm run optimize:images
-	@echo "Frontend assets built successfully."
 
 
