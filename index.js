@@ -131,4 +131,36 @@ document.addEventListener('DOMContentLoaded', () => {
         // Initialize first image
         showImage(currentIndex);
     });
+
+    // --- Dark Mode Toggle ---
+    const themeToggleBtn = document.getElementById('toggle');
+
+    // Function to set the theme and update the checkbox state
+    function setTheme(theme) {
+        if (theme === 'dark') {
+            document.body.classList.add('dark');
+            themeToggleBtn.checked = true;
+            localStorage.setItem('color-theme', 'dark');
+        } else {
+            document.body.classList.remove('dark');
+            themeToggleBtn.checked = false;
+            localStorage.setItem('color-theme', 'light');
+        }
+    }
+
+    // On page load or when changing themes, apply the stored theme or system preference
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        setTheme('dark');
+    } else {
+        setTheme('light');
+    }
+
+    // Event listener for the toggle button
+    themeToggleBtn.addEventListener('change', () => {
+        if (themeToggleBtn.checked) {
+            setTheme('dark');
+        } else {
+            setTheme('light');
+        }
+    });
 });
