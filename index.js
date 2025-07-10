@@ -46,8 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    
-
     // --- Web3Forms Submission ---
     const web3form = document.querySelector('#contact form');
     const formStatus = document.getElementById('form-status');
@@ -83,4 +81,54 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
     }
+
+    // --- Project Carousels ---
+    document.querySelectorAll('.project-carousel').forEach(carousel => {
+        const images = carousel.querySelectorAll('.carousel-item');
+        const dots = carousel.querySelectorAll('.dot');
+        const prevBtn = carousel.querySelector('.carousel-prev');
+        const nextBtn = carousel.querySelector('.carousel-next');
+        let currentIndex = 0;
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.remove('active');
+                img.classList.add('opacity-0');
+                if (i === index) {
+                    img.classList.add('active');
+                    img.classList.remove('opacity-0');
+                    img.classList.add('opacity-100');
+                }
+            });
+            dots.forEach((dot, i) => {
+                dot.classList.remove('active');
+                if (i === index) {
+                    dot.classList.add('active');
+                }
+            });
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
+
+        prevBtn.addEventListener('click', prevImage);
+        nextBtn.addEventListener('click', nextImage);
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                showImage(currentIndex);
+            });
+        });
+
+        // Initialize first image
+        showImage(currentIndex);
+    });
 });
