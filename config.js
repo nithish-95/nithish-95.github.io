@@ -31,6 +31,6 @@ Object.assign(projectLinks, {
         github: "https://github.com/nithish-95/tic-tac-toe/tree/Hosted",
         liveDemo: "http://tic-tac-toe.nithish.net/"
     }
-};
+});
 
 
