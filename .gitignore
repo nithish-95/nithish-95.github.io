@@ -49,3 +49,6 @@ ehthumbs.db
 
 # Optional: Ignore image assets if not tracking (modify as needed)
 # /img/*
+
+# Go files
+*.go
