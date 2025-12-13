@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "company": "Square Results",
+    "role": "Software Development Engineer - GenAI",
+    "start_date": "2025-08",
+    "end_date": "Present",
+    "location": "Seattle, Remote",
+    "description": "Architected a multi-tenant centralised backend with Supabase, unifying authentication and user management across multiple company websites, reducing login friction by 30% and enabling scalable access for thousands of users. Leveraged Supabase’s Row-Level Security and real-time capabilities to integrate disparate site user bases into a single, secure login system, ensuring data isolation and seamless cross-site functionality."
+  },
+  {
+    "id": 2,
+    "company": "ClassA.ai",
+    "role": "Software Developer",
+    "start_date": "2025-07",
+    "end_date": "2025-07",
+    "location": "Seattle, Remote",
+    "description": "Developed TypeScript schemas and data integration logic for 200+ aviation insurance endorsements, automating .docx policy document generation with TypeBox validation and templating tools. Enhanced premium calculation and document population processes, integrating with external services to ensure accurate, compliant policy issuance for a scalable insurance platform."
+  },
+  {
+    "id": 3,
+    "company": "Central Marine Fisheries Research Institute",
+    "role": "Software Developer",
+    "start_date": "2025-01-01",
+    "end_date": "2025-07-01",
+    "location": "Remote, USA",
+    "description": "Developed and maintained full-stack web and mobile applications using Vue.js, Flutter, and Go, enabling over 100 researchers and students to access real-time marine data even under low connectivity conditions. Implemented robust data synchronization protocols that automatically updated databases as connectivity was re-established, ensuring continuous and reliable data access."
+  },
+  {
+    "id": 4,
+    "company": "University of Michigan - Deep Fake Research Lab",
+    "role": "Research Assistant - GenAI (Volunteer)",
+    "start_date": "2024-08",
+    "end_date": "2024-12",
+    "location": "Michigan, USA",
+    "description": "Collaborated with academic experts to design and validate deepfake detection models using TensorFlow, achieving 88.37% accuracy by benchmarking 8 models across diverse Gen-AI image generation datasets. Refined model performance using advanced machine learning techniques, contributing to research advancements in AI-driven security"
+  },
+  {
+    "id": 5,
+    "company": "University of Michigan - Deep Fake Research Lab",
+    "role": "Computer Science Grader - Digital forensics",
+    "start_date": "2024-08",
+    "end_date": "2024-12",
+    "location": "Michigan, USA",
+    "description": "Collaborated with academic experts to design and validate deepfake detection models using TensorFlow, achieving 88.37% accuracy by benchmarking 8 models across diverse Gen-AI image generation datasets. Refined model performance using advanced machine learning techniques, contributing to research advancements in AI-driven security"
+  }
+]
