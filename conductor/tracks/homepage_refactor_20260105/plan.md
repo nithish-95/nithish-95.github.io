@@ -5,7 +5,7 @@ This plan outlines the steps to refactor the homepage for better code organizati
 ## Phase 1: Component Creation and Refactoring
 - [x] Task: Create the `components/site/home` directory. [94e9569]
 - [x] Task: Create the `ArrowLink.tsx` component inside the `components/ui/` directory. [52f5145]
-- [ ] Task: Create the `HeroSection.tsx` component in `components/site/home/`.
+- [x] Task: Create the `HeroSection.tsx` component in `components/site/home/`. [0d6aab8]
 - [ ] Task: Create the `RecentProjectsSection.tsx` component in `components/site/home/`.
 - [ ] Task: Create the `LatestPostsSection.tsx` component in `components/site/home/`.
 - [ ] Task: Move the corresponding JSX and logic from `app/page.tsx` into each new section component.
