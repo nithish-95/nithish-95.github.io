@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -8,6 +7,7 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import { getProjects } from "@/lib/content";
+import { ArrowLink } from "@/components/ui/arrow-link"; // Import the new component
 
 export function RecentProjectsSection() {
   const projects = getProjects().slice(0, 3);
@@ -35,34 +35,17 @@ export function RecentProjectsSection() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="mt-auto">
-                <Link
-                  href={`/projects#${project.id}`}
-                  className="text-sm font-medium text-primary hover:underline inline-flex items-center"
-                >
+                <ArrowLink href={`/projects#${project.id}`}>
                   View Project
-                  <svg
-                    className="w-4 h-4 ml-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </Link>
+                </ArrowLink>
               </CardContent>
             </Card>
           ))}
         </div>
         <div className="flex justify-center mt-12">
-          <Link href="/projects">
+          <ArrowLink href="/projects">
             <Button variant="outline">View All Projects</Button>
-          </Link>
+          </ArrowLink>
         </div>
       </div>
     </section>

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -8,6 +7,7 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import { getAllPosts } from "@/lib/content";
+import { ArrowLink } from "@/components/ui/arrow-link"; // Import the new component
 
 export function LatestPostsSection() {
   const posts = getAllPosts().slice(0, 3);
@@ -25,7 +25,7 @@ export function LatestPostsSection() {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid max_w-5xl gap-8 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
             <Card key={post.id} className="h-full flex flex-col transition-all hover:shadow-lg hover:-translate-y-1">
               <CardHeader>
@@ -35,34 +35,17 @@ export function LatestPostsSection() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="mt-auto">
-                <Link
-                  href={`/posts/${post.slug}`}
-                  className="text-sm font-medium text-primary hover:underline inline-flex items-center"
-                >
+                <ArrowLink href={`/posts/${post.slug}`}>
                   Read Post
-                  <svg
-                    className="w-4 h-4 ml-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </Link>
+                </ArrowLink>
               </CardContent>
             </Card>
           ))}
         </div>
         <div className="flex justify-center mt-12">
-          <Link href="/posts">
+          <ArrowLink href="/posts">
             <Button variant="outline">View All Posts</Button>
-          </Link>
+          </ArrowLink>
         </div>
       </div>
     </section>
