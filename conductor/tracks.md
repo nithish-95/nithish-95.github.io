@@ -4,5 +4,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-## [ ] Track: Create user authentication flow for user sign in.
-*Link: [./conductor/tracks/user_auth_20260105/](./conductor/tracks/user_auth_20260105/)*
+## [~] Track: Look at the current site and moke improvements in code and design
+*Link: [./conductor/tracks/homepage_refactor_20260105/](./conductor/tracks/homepage_refactor_20260105/)*
