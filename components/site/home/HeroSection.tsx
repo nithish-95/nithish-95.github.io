@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Terminal } from "lucide-react";
 
 export function HeroSection() {
   return (
@@ -13,9 +14,13 @@ export function HeroSection() {
       <div className="container relative z-10 px-4 md:px-6">
         <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 text-center md:text-left">
           <div className="space-y-2">
-            <Badge variant="secondary" className="mb-4">
-              Available for hire
-            </Badge>
+            <Alert>
+              <Terminal className="h-4 w-4" />
+              <AlertTitle>Available for hire</AlertTitle>
+              <AlertDescription>
+                I'm currently looking for new opportunities.
+              </AlertDescription>
+            </Alert>
             <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
               Hi, I&apos;m <span className="text-primary">Nithish Suresh Babu</span>
             </h1>
