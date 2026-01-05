@@ -8,7 +8,7 @@ This plan outlines the steps to refactor the homepage for better code organizati
 - [x] Task: Create the `HeroSection.tsx` component in `components/site/home/`. [0d6aab8]
 - [x] Task: Create the `RecentProjectsSection.tsx` component in `components/site/home/`. [c71287b]
 - [x] Task: Create the `LatestPostsSection.tsx` component in `components/site/home/`. [1efe823]
-- [ ] Task: Move the corresponding JSX and logic from `app/page.tsx` into each new section component.
+- [x] Task: Move the corresponding JSX and logic from `app/page.tsx` into each new section component. [3ab2e58]
 - [ ] Task: Update `app/page.tsx` to import and render the `HeroSection`, `RecentProjectsSection`, and `LatestPostsSection` components.
 - [ ] Task: Replace the hardcoded links in the `RecentProjectsSection` and `LatestPostsSection` with the new `ArrowLink` component.
 - [ ] Task: Conductor - User Manual Verification 'Component Creation and Refactoring' (Protocol in workflow.md)
