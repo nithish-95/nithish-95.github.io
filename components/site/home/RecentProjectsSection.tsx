@@ -27,7 +27,7 @@ export function RecentProjectsSection() {
         </div>
         <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
-            <Card key={project.id} className="h-full flex flex-col transition-all hover:shadow-lg hover:-translate-y-1">
+            <Card key={project.id} className="h-full flex flex-col transition-all hover:shadow-lg hover:-translate-y-1 animate-fade-in">
               <CardHeader>
                 <CardTitle>{project.title}</CardTitle>
                 <CardDescription className="line-clamp-2">
