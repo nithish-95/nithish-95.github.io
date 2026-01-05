@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export function HeroSection() {
   return (
@@ -10,7 +11,7 @@ export function HeroSection() {
         <div className="absolute bottom-0 left-[-20%] h-[500px] w-[500px] rounded-full bg-blue-500/20 blur-[120px]" />
       </div>
       <div className="container relative z-10 px-4 md:px-6">
-        <div className="flex flex-col items-center space-y-4 text-center">
+        <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 text-center md:text-left">
           <div className="space-y-2">
             <Badge variant="secondary" className="mb-4">
               Available for hire
@@ -22,19 +23,23 @@ export function HeroSection() {
               Software Engineer building high-quality web applications.
               Specializing in React, Next.js, and Modern UI/UX.
             </p>
+            <div className="space-x-4 pt-4">
+              <Link href="/projects">
+                <Button size="lg" className="h-11 px-8">
+                  View Projects
+                </Button>
+              </Link>
+              <Link href="/experience">
+                <Button variant="outline" size="lg" className="h-11 px-8">
+                  View Experience
+                </Button>
+              </Link>
+            </div>
           </div>
-          <div className="space-x-4 pt-4">
-            <Link href="/projects">
-              <Button size="lg" className="h-11 px-8">
-                View Projects
-              </Button>
-            </Link>
-            <Link href="/experience">
-              <Button variant="outline" size="lg" className="h-11 px-8">
-                View Experience
-              </Button>
-            </Link>
-          </div>
+          <Avatar className="w-48 h-48">
+            <AvatarImage src="/avatar.png" alt="Nithish Suresh Babu" />
+            <AvatarFallback>NS</AvatarFallback>
+          </Avatar>
         </div>
       </div>
     </section>
