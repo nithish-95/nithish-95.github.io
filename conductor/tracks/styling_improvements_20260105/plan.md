@@ -8,6 +8,7 @@ This plan outlines the steps to improve the styling and implementation of the ho
 - [ ] Task: Conductor - User Manual Verification 'Center Homepage Content' (Protocol in workflow.md)
 
 ## Phase 2: Integrate Shadcn UI Components
+- [x] Task: Add an image to the right of the hero section text, using the Shadcn `Avatar` component. [3e925ca]
 - [ ] Task: Identify opportunities to introduce new Shadcn UI components to enhance the homepage design.
 - [ ] Task: Implement the new Shadcn UI components on the homepage.
 - [ ] Task: Refine the styling of existing Shadcn UI components (e.g., buttons, cards) to better align with the design guidelines.
