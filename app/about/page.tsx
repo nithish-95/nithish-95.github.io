@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 import Image from "next/image";
-import { GraduationCap, Trophy, Code2, Database, Cloud, Cpu, Terminal, Globe } from "lucide-react";
+import { GraduationCap, Trophy, Code2, Database, Cloud, Cpu, Terminal, Globe, Github } from "lucide-react";
 
 export default function AboutPage() {
   const skillCategories = [
@@ -69,6 +69,18 @@ export default function AboutPage() {
       org: "Vishwakarma Award, India",
       year: "2020",
       description: "Recognized for innovative technical project in a nationwide competition.",
+    },
+  ];
+
+  const openSourceContributions = [
+    {
+      project: "GOOGLE | go-github",
+      role: "CONTRIBUTOR",
+      points: [
+        "Engineered and implemented new API methods to manage GitHub Enterprise App repository installations, successfully enhancing the functionality of the widely-used library.",
+        "Authored production-quality Go code and comprehensive unit tests to guarantee the reliability and stability of new library features.",
+        "Collaborated with maintainers through the Pull Request (PR) review process, refactoring code to align with established project conventions and Go best practices.",
+      ],
     },
   ];
 
@@ -141,6 +153,32 @@ export default function AboutPage() {
               <CardContent>
                 <p className="font-medium text-lg">{edu.degree}</p>
                 <p className="text-sm text-muted-foreground mt-2">{edu.gpa}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Open Source Contributions Section */}
+      <section>
+        <h2 className="text-3xl font-bold mb-8 flex items-center">
+          <Github className="mr-3 h-8 w-8" /> Open Source Contributions
+        </h2>
+        <div className="grid gap-6 md:grid-cols-2">
+          {openSourceContributions.map((contribution, index) => (
+            <Card key={index} className="hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <CardTitle className="text-xl">{contribution.project}</CardTitle>
+                <CardDescription className="font-medium">{contribution.role}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-300">
+                  {contribution.points.map((point, idx) => (
+                    <li key={idx} className="leading-relaxed">
+                      {point}
+                    </li>
+                  ))}
+                </ul>
               </CardContent>
             </Card>
           ))}
