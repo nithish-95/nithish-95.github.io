@@ -12,9 +12,10 @@ export async function generateStaticParams() {
 export default async function PostPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const post = getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
   const processedContent = await remark().use(html).process(post.content);
   const contentHtml = processedContent.toString();
 

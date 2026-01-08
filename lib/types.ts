@@ -15,7 +15,7 @@ export interface Experience {
   start_date: string;
   end_date: string;
   location: string;
-  description: string;
+  points: string[];
 }
 
 export interface Project {
