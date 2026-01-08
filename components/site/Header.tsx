@@ -22,11 +22,12 @@ import * as React from "react";
 export function Header() {
   const navLinks = [
     { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
     { href: "/projects", label: "Projects" },
     { href: "/experience", label: "Experience" },
-    { href: "/education", label: "Education" },
-    { href: "/posts", label: "Posts" },
-    { href: "/about", label: "About" },
+    /*{ href: "/education", label: "Education" },
+    { href: "/posts", label: "Posts" }, -*/
+
   ];
 
   const { setTheme } = useTheme();
@@ -41,11 +42,11 @@ export function Header() {
           <NavigationMenuList>
             {navLinks.map((link) => (
               <NavigationMenuItem key={link.href}>
-                <Link href={link.href} legacyBehavior passHref>
-                  <NavigationMenuLink className="px-4 py-2">
+                <NavigationMenuLink asChild className="px-4 py-2">
+                  <Link href={link.href}>
                     {link.label}
-                  </NavigationMenuLink>
-                </Link>
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
             ))}
           </NavigationMenuList>

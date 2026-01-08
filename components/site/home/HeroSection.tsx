@@ -14,7 +14,7 @@ export function HeroSection() {
       <div className="container relative z-10 px-4 md:px-6">
         <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 text-center md:text-left">
           <div className="space-y-2">
-            <Alert>
+            <Alert className="w-fit mx-auto md:mx-0">
               <Terminal className="h-4 w-4" />
               <AlertTitle>Available for hire</AlertTitle>
               <AlertDescription>
@@ -25,8 +25,8 @@ export function HeroSection() {
               Hi, I&apos;m <span className="text-primary">Nithish Suresh Babu</span>
             </h1>
             <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-              Software Engineer building high-quality web applications.
-              Specializing in React, Next.js, and Modern UI/UX.
+              Software Engineer crafting robust web solutions.
+              Specializing in high-performance, scalable systems using <span className="text-foreground font-medium">Golang</span>.
             </p>
             <div className="space-x-4 pt-4">
               <Link href="/projects">
@@ -41,8 +41,8 @@ export function HeroSection() {
               </Link>
             </div>
           </div>
-          <Avatar className="w-48 h-48">
-            <AvatarImage src="/avatar.png" alt="Nithish Suresh Babu" />
+          <Avatar className="w-[400px] h-[500px]">
+            <AvatarImage src="/nithish.jpeg" alt="Nithish Suresh Babu" />
             <AvatarFallback>NS</AvatarFallback>
           </Avatar>
         </div>

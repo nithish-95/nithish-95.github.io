@@ -6,11 +6,11 @@ export function Footer() {
     <footer className="py-6 md:px-8 md:py-0 border-t">
       <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
         <p className="text-balance text-center text-sm leading-loose text-muted-foreground md:text-left">
-          © 2025 Nithish Kumar. All rights reserved. Built with Next.js and Tailwind CSS.
+          © 2026 Nithish Suresh. All rights reserved. Built with Next.js
         </p>
         <div className="flex gap-4">
           <Link
-            href="https://twitter.com"
+            href="https://x.com/nithish_95"
             className="text-muted-foreground transition-colors hover:text-foreground"
             prefetch={false}
           >
@@ -18,7 +18,7 @@ export function Footer() {
             <span className="sr-only">Twitter</span>
           </Link>
           <Link
-            href="https://github.com"
+            href="https://github.com/nithish-95"
             className="text-muted-foreground transition-colors hover:text-foreground"
             prefetch={false}
           >
@@ -26,7 +26,7 @@ export function Footer() {
             <span className="sr-only">GitHub</span>
           </Link>
           <Link
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/nithish-suresh-babu/"
             className="text-muted-foreground transition-colors hover:text-foreground"
             prefetch={false}
           >
