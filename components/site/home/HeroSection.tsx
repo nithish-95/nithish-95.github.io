@@ -39,6 +39,16 @@ export function HeroSection() {
                   View Experience
                 </Button>
               </Link>
+              <Link href="/Nithish Resume.pdf" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="lg" className="h-11 px-8">
+                  View Resume
+                </Button>
+              </Link>
+              <Link href="/Nithish Resume.pdf" download>
+                <Button size="lg" className="h-11 px-8">
+                  Download Resume
+                </Button>
+              </Link>
             </div>
           </div>
           <Avatar className="w-[400px] h-[500px]">
