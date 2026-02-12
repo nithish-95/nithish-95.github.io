@@ -72,13 +72,20 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: |
-          ${{ steps.detect-package-manager.outputs.runner }} next build
-          if [ ! -d "build" ]; then
-            echo "Error: Build directory not found"
+          npm run build 2>&1
+          echo "Checking for build output..."
+          ls -la
+          if [ -d "build" ]; then
+            echo "Build directory found"
+            ls -la build/
+          elif [ -d "out" ]; then
+            echo "Out directory found, renaming to build"
+            mv out build
+            ls -la build/
+          else
+            echo "Error: Neither build nor out directory found"
             exit 1
           fi
-          echo "Build directory contents:"
-          ls -la build/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
