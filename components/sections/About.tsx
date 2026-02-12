@@ -21,7 +21,7 @@ const skills = [
   "PostgreSQL", "Supabase", "Convex", "PocketBase",
   "AWS Lambda", "App Runner", "RDS", "S3", "Fargate", "IAM", "API Gateway", "Route53",
   "Docker", "Kubernetes", "k3s", "CI/CD", "Vercel", "Coolify", "Dokploy",
-  "Google Gemini", "AWS Bedrock", "Rekognition", "Polly",
+  "Google AI SDK(Go, Python, JS)", "AWS Bedrock", "Rekognition", "Polly",
   "TensorFlow", "LangChain", "MCPs", "AI Tools", "Prompt Engineering",
   "Postman"
 ];
