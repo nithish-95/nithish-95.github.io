@@ -42,3 +42,7 @@ yarn-error.log*
 next-env.d.ts
 
 AGENTS.md
+
+# Content directory - excluded during build since blog is temporarily down
+# To restore: remove this line from .gitignore
+content/blog/*.mdx
