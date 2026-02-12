@@ -9,27 +9,34 @@ import Link from "next/link";
 const stats = [
   { icon: Code2, label: "Years Experience", value: "3+" },
   { icon: Award, label: "Projects Deployed", value: "10+" },
-  { icon: Briefcase, label: "Cloud Platforms", value: "AWS, Vercel" },
+  { icon: Briefcase, label: "Cloud Platforms", value: "AWS" },
   { icon: Coffee, label: "Go Projects", value: "5+" },
 ];
 
 const skills = [
-  "Go", "TypeScript", "Python", "React", "Next.js",
-  "Vue.js", "PostgreSQL", "AWS Fargate", "Docker", "Kubernetes",
-  "WebSockets", "Google Gemini", "TensorFlow", "LangChain", "CI/CD"
+  "Go", "TypeScript", "Python", "JavaScript", "HTML/CSS",
+  "React", "Next.js", "Vue.js", "Tailwind CSS", "Shadcn UI",
+  "React Native", "Expo", "Flutter",
+  "Go Chi", "FastAPI", "WebSockets", "REST APIs",
+  "PostgreSQL", "Supabase", "Convex", "PocketBase",
+  "AWS Lambda", "App Runner", "RDS", "S3", "Fargate", "IAM", "API Gateway", "Route53",
+  "Docker", "Kubernetes", "k3s", "CI/CD", "Vercel", "Coolify", "Dokploy",
+  "Google Gemini", "AWS Bedrock", "Rekognition", "Polly",
+  "TensorFlow", "LangChain", "MCPs", "AI Tools", "Prompt Engineering",
+  "Postman"
 ];
 
 const projectHighlights = [
   {
     title: "Chrono SaaS",
     description: "AI-powered time tracking with Google Gemini integration",
-    tech: "Next.js, SQLite, Vercel",
+    tech: "Next.js, SQLite, AWS EC2",
     impact: "30% productivity increase"
   },
   {
     title: "Local-Vibes Platform",
     description: "Real-time event platform with Go backend",
-    tech: "Go, Vue.js, WebSockets, Docker",
+    tech: "Go, Vue.js, WebSockets, Docker, Supabase",
     impact: "Sub-100ms API responses"
   },
   {
@@ -76,24 +83,24 @@ export function About() {
           >
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                I'm a Software Development Engineer - GenAI with expertise in full-stack 
-                development and AI integration. I hold a Master's in Computer 
-                and Information Science from the University of Michigan (GPA: 3.9) and a 
-                Bachelor's from Anna University.
+                I&apos;m a Software Development Engineer - GenAI with expertise in full-stack
+                development and AI integration. I hold a Master&apos;s in Computer
+                and Information Science from the University of Michigan (GPA: 3.9) and a
+                Bachelor&apos;s from Anna University.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                I specialize in building scalable, multi-tenant platforms and designing 
-                robust data synchronization systems. My tech stack includes Go, Python, 
-                TypeScript, and modern frameworks like Next.js and Vue.js. I&apos;m also 
-                experienced in AI/ML with TensorFlow and LangChain.
+                I specialize in building scalable, multi-tenant platforms and designing
+                robust data synchronization systems. My tech stack includes Go, Python,
+                TypeScript, and modern frameworks like Next.js and Vue.js. I&apos;m also
+                experienced in AI/ML.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I&apos;m an active open-source contributor to Google&apos;s go-github library, 
-                where I&apos;ve implemented new API methods for GitHub Enterprise. I&apos;m passionate 
-                about creating elegant solutions to complex problems and driving innovative, 
+                I&apos;m an active open-source contributor to Google&apos;s go-github library,
+                where I&apos;ve implemented new API methods for GitHub Enterprise. I&apos;m passionate
+                about creating elegant solutions to complex problems and driving innovative,
                 scalable software solutions.
               </p>
-              
+
               {/* Resume Download Button */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -153,7 +160,7 @@ export function About() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: 0.05 * index }}
+                transition={{ duration: 0.3, delay: 0.02 * index }}
               >
                 <Badge
                   variant="secondary"

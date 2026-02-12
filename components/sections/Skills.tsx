@@ -8,13 +8,16 @@ import {
   Smartphone, 
   Globe, 
   Cpu,
-  GitBranch,
-  Shield,
-  Zap,
   Layout,
   Server,
   Terminal,
-  Sparkles
+  Box,
+  Layers,
+  Wrench,
+  Sparkles,
+  Rocket,
+  Zap,
+  Hexagon
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
@@ -27,36 +30,73 @@ const skillCategories = [
       { name: "TypeScript", level: 95, projects: ["Chrono", "Next.js Projects", "Production App"] },
       { name: "Python", level: 90, projects: ["AI/ML Projects", "Twitter Analysis", "ViT Face Detection"] },
       { name: "JavaScript", level: 94, projects: ["Frontend Projects", "React Apps"] },
+      { name: "HTML/CSS", level: 96, projects: ["All Web Projects"] },
     ],
   },
   {
-    title: "Frontend",
+    title: "Frontend & Mobile",
     icon: Layout,
     skills: [
-      { name: "Next.js", level: 95, projects: ["Chrono", "Next Auth Template", "Portfolio"] },
       { name: "React", level: 93, projects: ["AI Recipe Generator", "Multiple Projects"] },
+      { name: "Next.js", level: 95, projects: ["Chrono", "Next Auth Template", "Portfolio"] },
       { name: "Vue.js", level: 85, projects: ["Local-Vibes Platform"] },
       { name: "Tailwind CSS", level: 95, projects: ["All Recent Projects"] },
+      { name: "Shadcn UI", level: 90, projects: ["Chrono", "Portfolio"] },
+      { name: "React Native", level: 82, projects: ["Mobile Apps"] },
+      { name: "Expo", level: 80, projects: ["Mobile Development"] },
+      { name: "Flutter", level: 78, projects: ["Cross-platform Apps"] },
+      { name: "AWS Amplify", level: 85, projects: ["Full-stack Projects"] },
     ],
   },
   {
-    title: "Backend & APIs",
+    title: "Backend & Headless CMS",
     icon: Server,
     skills: [
       { name: "Go Chi", level: 90, projects: ["Local-Vibes", "Tic-Tac-Toe", "Manga"] },
+      { name: "FastAPI", level: 88, projects: ["AI/ML APIs", "Python Projects"] },
       { name: "WebSockets", level: 88, projects: ["Tic-Tac-Toe", "Local-Vibes"] },
-      { name: "PostgreSQL", level: 90, projects: ["Local-Vibes", "Production App"] },
       { name: "REST APIs", level: 92, projects: ["Go-Lang Projects", "Multiple APIs"] },
+      { name: "PostgreSQL", level: 90, projects: ["Local-Vibes", "Production App"] },
+      { name: "Supabase", level: 88, projects: ["Full-stack Apps"] },
+      { name: "Convex", level: 85, projects: ["Real-time Apps"] },
+      { name: "PocketBase", level: 82, projects: ["Backend Services"] },
     ],
   },
   {
-    title: "AI/ML & Cloud",
-    icon: Cpu,
+    title: "Cloud & DevOps",
+    icon: Cloud,
+    skills: [
+      { name: "AWS Lambda", level: 88, projects: ["Serverless Functions"] },
+      { name: "AWS App Runner", level: 85, projects: ["Containerized Apps"] },
+      { name: "AWS RDS", level: 87, projects: ["Database Management"] },
+      { name: "AWS S3", level: 90, projects: ["File Storage", "Static Hosting"] },
+      { name: "AWS Fargate", level: 85, projects: ["Tic-Tac-Toe Game"] },
+      { name: "AWS IAM", level: 86, projects: ["Security Management"] },
+      { name: "API Gateway", level: 84, projects: ["API Management"] },
+      { name: "Route53", level: 83, projects: ["DNS Management"] },
+      { name: "Docker", level: 88, projects: ["Local-Vibes", "Manga", "Tic-Tac-Toe"] },
+      { name: "Kubernetes", level: 82, projects: ["Production App", "Go-Lang"] },
+      { name: "k3s", level: 80, projects: ["Lightweight K8s"] },
+      { name: "CI/CD", level: 85, projects: ["Deployment Pipelines"] },
+      { name: "Vercel", level: 92, projects: ["Next.js Deployments"] },
+      { name: "Coolify", level: 80, projects: ["Self-hosted PaaS"] },
+      { name: "Dokploy", level: 78, projects: ["Self-hosted Deployments"] },
+    ],
+  },
+  {
+    title: "AI/ML & Tools",
+    icon: Sparkles,
     skills: [
       { name: "Google Gemini", level: 88, projects: ["Chrono AI Analytics"] },
-      { name: "AWS Fargate", level: 85, projects: ["Tic-Tac-Toe Game"] },
-      { name: "Docker", level: 85, projects: ["Local-Vibes", "Manga", "Tic-Tac-Toe"] },
-      { name: "Kubernetes", level: 80, projects: ["Production App", "Go-Lang"] },
+      { name: "AWS Bedrock", level: 85, projects: ["AI Model Integration"] },
+      { name: "AWS Rekognition", level: 84, projects: ["Image Analysis"] },
+      { name: "AWS Polly", level: 83, projects: ["Text-to-Speech"] },
+      { name: "TensorFlow", level: 85, projects: ["Deep Learning", "Face Detection"] },
+      { name: "LangChain", level: 86, projects: ["AI Applications"] },
+      { name: "MCPs", level: 84, projects: ["AI Development"] },
+      { name: "AI Tools", level: 87, projects: ["Multiple AI Projects"] },
+      { name: "Prompt Engineering", level: 90, projects: ["AI Integration"] },
+      { name: "Postman", level: 92, projects: ["API Testing"] },
     ],
   },
 ];
@@ -68,12 +108,18 @@ const technologies = [
   { name: "Next.js", icon: Globe, color: "text-foreground" },
   { name: "React", icon: Code2, color: "text-blue-500" },
   { name: "Vue.js", icon: Layout, color: "text-green-500" },
-  { name: "Flutter", icon: Smartphone, color: "text-blue-400" },
+  { name: "React Native", icon: Smartphone, color: "text-cyan-400" },
   { name: "PostgreSQL", icon: Database, color: "text-blue-400" },
   { name: "Supabase", icon: Database, color: "text-green-400" },
+  { name: "Convex", icon: Zap, color: "text-orange-500" },
+  { name: "PocketBase", icon: Box, color: "text-purple-500" },
   { name: "AWS", icon: Cloud, color: "text-orange-500" },
-  { name: "Docker", icon: Container, color: "text-blue-500" },
-  { name: "TensorFlow", icon: Cpu, color: "text-orange-400" },
+  { name: "Docker", icon: Layers, color: "text-blue-500" },
+  { name: "Kubernetes", icon: Rocket, color: "text-blue-600" },
+  { name: "k3s", icon: Hexagon, color: "text-yellow-500" },
+  { name: "Vercel", icon: Globe, color: "text-foreground" },
+  { name: "FastAPI", icon: Zap, color: "text-green-500" },
+  { name: "Postman", icon: Wrench, color: "text-orange-500" },
 ];
 
 function Container({ className }: { className?: string }) {
@@ -113,7 +159,7 @@ export function Skills() {
             Skills & Technologies
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Technologies and tools I use across my projects. Each skill shows the projects where it&apos;s applied.
+            Comprehensive tech stack spanning frontend, backend, cloud, and AI. Each skill shows real-world projects where it&apos;s applied.
           </p>
         </motion.div>
 
@@ -141,7 +187,7 @@ export function Skills() {
         </motion.div>
 
         {/* Skill Categories with Progress Bars */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
@@ -165,7 +211,7 @@ export function Skills() {
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: 0.1 * skillIndex + 0.1 * categoryIndex }}
+                    transition={{ duration: 0.3, delay: 0.05 * skillIndex + 0.1 * categoryIndex }}
                   >
                     <div className="flex justify-between mb-1">
                       <span className="font-medium">{skill.name}</span>
@@ -176,7 +222,7 @@ export function Skills() {
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         viewport={{ once: true }}
-                        transition={{ duration: 1, delay: 0.2 * skillIndex + 0.1 * categoryIndex, ease: "easeOut" }}
+                        transition={{ duration: 1, delay: 0.1 * skillIndex + 0.1 * categoryIndex, ease: "easeOut" }}
                         className="h-full bg-gradient-to-r from-primary to-primary/70 rounded-full"
                       />
                     </div>
@@ -193,6 +239,24 @@ export function Skills() {
             </motion.div>
           ))}
         </div>
+
+        {/* Additional Skills Summary */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-16 text-center"
+        >
+          <p className="text-muted-foreground mb-4">Also experienced with:</p>
+          <div className="flex flex-wrap justify-center gap-2">
+            {["Coolify", "Dokploy", "MCPs", "AI Tools", "Route53", "IAM", "Expo", "PocketBase", "k3s"].map((skill) => (
+              <Badge key={skill} variant="secondary" className="px-3 py-1">
+                {skill}
+              </Badge>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
