@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Code2, Coffee, Briefcase, Award, Download, Zap, Server, Cloud, Target } from "lucide-react";
-import Link from "next/link";
+
 
 const stats = [
   { icon: Code2, label: "Years Experience", value: "3+" },
@@ -110,10 +110,10 @@ export function About() {
                 className="mt-8"
               >
                 <Button asChild size="lg" className="group">
-                  <Link href="/resume/Nithish Resume.pdf" download target="_blank">
+                  <a href="/resume/Nithish%20Resume.pdf" download target="_blank" className="flex items-center">
                     <Download className="w-4 h-4 mr-2 transition-transform group-hover:translate-y-0.5" />
                     Download Resume
-                  </Link>
+                  </a>
                 </Button>
               </motion.div>
             </div>
