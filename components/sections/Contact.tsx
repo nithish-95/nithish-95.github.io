@@ -125,31 +125,37 @@ export function Contact() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("/api/contact", {
+      // Prepare form data for Web3Forms
+      const formDataObj = new FormData();
+      formDataObj.append("access_key", "2c827b37-2a62-4d15-a125-0f55c9cb4965");
+      formDataObj.append("name", formData.name);
+      formDataObj.append("email", formData.email);
+      formDataObj.append("subject", `[${formData.messageType}] ${formData.subject}`);
+      formDataObj.append("message", formData.message);
+      formDataObj.append("from_name", formData.name);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+        body: formDataObj,
       });
 
       const data = await response.json();
 
-      if (!response.ok) {
-        throw new Error(data.error || "Failed to send message");
+      if (data.success) {
+        setIsSubmitted(true);
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          messageType: "",
+          message: "",
+        });
+
+        // Reset success message after 5 seconds
+        setTimeout(() => setIsSubmitted(false), 5000);
+      } else {
+        throw new Error(data.message || "Failed to send message");
       }
-
-      setIsSubmitted(true);
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        messageType: "",
-        message: "",
-      });
-
-      // Reset success message after 5 seconds
-      setTimeout(() => setIsSubmitted(false), 5000);
     } catch (error) {
       setSubmitError(
         error instanceof Error ? error.message : "Failed to send message. Please try again."
