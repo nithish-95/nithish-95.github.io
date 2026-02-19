@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowDown, Github, Linkedin, Mail, Trophy } from "lucide-react";
 import Link from "next/link";
+import { SplineScene } from "@/components/ui/SplineScene";
 
 // Smooth scroll handler for hash links
 const handleScrollClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -19,39 +20,14 @@ const handleScrollClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string)
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted/50" />
-      
-      {/* Animated background shapes */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute -top-40 -right-40 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute -bottom-40 -left-40 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.5, 0.3, 0.5],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-      </div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8 text-white">
+      {/* Spline 3D Background */}
+      <SplineScene
+        scene="https://prod.spline.design/1Fev8vLMMhgRYzuL/scene.splinecode"
+        className="absolute inset-0 w-full h-full"
+      />
 
-      <div className="relative z-10 max-w-5xl mx-auto text-center">
+      <div className="relative z-10 max-w-5xl mx-auto text-center pointer-events-none">
         {/* Greeting */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -59,7 +35,7 @@ export function Hero() {
           transition={{ duration: 0.5 }}
           className="mb-6"
         >
-          <span className="text-muted-foreground text-lg font-medium">
+          <span className="text-white/60 text-lg font-medium">
             Hello, I&apos;m
           </span>
         </motion.div>
@@ -82,7 +58,7 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mb-8"
         >
-          <span className="text-2xl sm:text-3xl md:text-4xl text-muted-foreground font-medium">
+          <span className="text-2xl sm:text-3xl md:text-4xl text-white/60 font-medium">
             Software Developer
           </span>
         </motion.div>
@@ -92,9 +68,9 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-6 leading-relaxed"
+          className="text-lg sm:text-xl text-white max-w-2xl mx-auto mb-6 leading-relaxed"
         >
-          Software Development Engineer - GenAI with expertise in full-stack development 
+          Software Development Engineer - GenAI with expertise in full-stack development
           and AI integration. Building scalable, multi-tenant platforms and robust data solutions.
         </motion.p>
 
@@ -103,7 +79,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.35 }}
-          className="mb-10"
+          className="mb-10 pointer-events-auto"
         >
           <Link
             href="https://chrono-next-6u7e.vercel.app/"
@@ -129,7 +105,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 pointer-events-auto"
         >
           <Button asChild size="lg" className="min-w-[160px]">
             <Link href="#projects" onClick={(e) => handleScrollClick(e, "#projects")}>View Projects</Link>
@@ -144,13 +120,13 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="flex justify-center gap-6"
+          className="flex justify-center gap-6 pointer-events-auto"
         >
           <Link
             href="https://github.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-colors duration-300"
+            className="text-white/60 hover:text-primary transition-colors duration-300"
             aria-label="GitHub"
           >
             <Github className="w-6 h-6" />
@@ -159,14 +135,14 @@ export function Hero() {
             href="https://linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-colors duration-300"
+            className="text-white/60 hover:text-primary transition-colors duration-300"
             aria-label="LinkedIn"
           >
             <Linkedin className="w-6 h-6" />
           </Link>
           <Link
             href="mailto:nithish952001@gmail.com"
-            className="text-muted-foreground hover:text-primary transition-colors duration-300"
+            className="text-white/60 hover:text-primary transition-colors duration-300"
             aria-label="Email"
           >
             <Mail className="w-6 h-6" />
@@ -179,9 +155,9 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.8 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 pointer-events-auto"
       >
-        <Link href="#about" onClick={(e) => handleScrollClick(e, "#about")} className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+        <Link href="#about" onClick={(e) => handleScrollClick(e, "#about")} className="flex flex-col items-center gap-2 text-white/60 hover:text-primary transition-colors">
           <span className="text-sm font-medium">Scroll Down</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}

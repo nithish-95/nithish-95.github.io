@@ -110,7 +110,7 @@ export function About() {
                 className="mt-8"
               >
                 <Button asChild size="lg" className="group">
-                  <a href="/resume/Nithish%20Resume.pdf" download target="_blank" className="flex items-center">
+                  <a href="/resume/Nithish_Resume.pdf" download target="_blank" className="flex items-center">
                     <Download className="w-4 h-4 mr-2 transition-transform group-hover:translate-y-0.5" />
                     Download Resume
                   </a>

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import { ThemeToggle } from "@/components/theme-toggle";
+
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -46,11 +46,10 @@ export function Navigation() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
             ? "bg-background/80 backdrop-blur-lg border-b border-border"
             : "bg-transparent"
-        }`}
+          }`}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
@@ -78,7 +77,7 @@ export function Navigation() {
               <Button asChild size="sm">
                 <Link href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>Hire Me</Link>
               </Button>
-              <ThemeToggle />
+
             </nav>
 
             {/* Mobile Menu Button */}
@@ -123,13 +122,10 @@ export function Navigation() {
                   {link.label}
                 </Link>
               ))}
-              <div className="flex items-center justify-between pt-4 border-t border-border">
-                <span className="text-sm text-muted-foreground">Theme</span>
-                <ThemeToggle />
-              </div>
+
               <Button asChild className="w-full mt-4">
-                <Link 
-                  href="#contact" 
+                <Link
+                  href="#contact"
                   onClick={(e) => {
                     handleNavClick(e, "#contact");
                     setIsMobileMenuOpen(false);
