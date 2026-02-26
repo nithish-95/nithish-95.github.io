@@ -59,7 +59,7 @@ export function Hero() {
           className="mb-8"
         >
           <span className="text-2xl sm:text-3xl md:text-4xl text-white/60 font-medium">
-            Software Developer
+            Lead AI Engineer · Data Scientist · AI Solutions Architect
           </span>
         </motion.div>
 
@@ -70,8 +70,8 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-lg sm:text-xl text-white max-w-2xl mx-auto mb-6 leading-relaxed"
         >
-          Software Development Engineer - GenAI with expertise in full-stack development
-          and AI integration. Building scalable, multi-tenant platforms and robust data solutions.
+          AI Engineer with 7+ years of experience building agentic AI systems, financial automation pipelines, 
+          and reusable AI accelerators. End-to-end owner across discovery, architecture, and production deployment.
         </motion.p>
 
         {/* Achievement Badge */}

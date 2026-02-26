@@ -7,10 +7,10 @@ import { Code2, Coffee, Briefcase, Award, Download, Zap, Server, Cloud, Target }
 
 
 const stats = [
-  { icon: Code2, label: "Years Experience", value: "3+" },
-  { icon: Award, label: "Projects Deployed", value: "10+" },
-  { icon: Briefcase, label: "Cloud Platforms", value: "AWS" },
-  { icon: Coffee, label: "Go Projects", value: "5+" },
+  { icon: Code2, label: "Years Experience", value: "7+" },
+  { icon: Award, label: "Projects Deployed", value: "15+" },
+  { icon: Briefcase, label: "Cloud Platforms", value: "AWS/Azure" },
+  { icon: Coffee, label: "AI Solutions", value: "10+" },
 ];
 
 const skills = [
@@ -28,28 +28,28 @@ const skills = [
 
 const projectHighlights = [
   {
-    title: "Chrono SaaS",
-    description: "AI-powered time tracking with Google Gemini integration",
-    tech: "Next.js, SQLite, AWS EC2",
-    impact: "30% productivity increase"
+    title: "ARR/NARR Calculator",
+    description: "AI-powered automated calculator replacing manual finance ops work",
+    tech: "LangGraph, Salesforce, NetSuite, AWS",
+    impact: "Days to seconds calculation time"
   },
   {
-    title: "Local-Vibes Platform",
-    description: "Real-time event platform with Go backend",
-    tech: "Go, Vue.js, WebSockets, Docker, Supabase",
-    impact: "Sub-100ms API responses"
+    title: "Revenue Leakage Accelerator",
+    description: "Document intelligence tool for contract-vs-invoice discrepancies",
+    tech: "LangGraph, OpenAI, Python, SharePoint API",
+    impact: "Quantifiable revenue leakage KPIs"
   },
   {
-    title: "Tic-Tac-Toe AWS",
-    description: "Multiplayer game on AWS Fargate",
-    tech: "Go, AWS Fargate, Docker, Redis",
-    impact: "100+ concurrent sessions"
+    title: "RAG Job Matching Pipeline",
+    description: "AI-powered job recommendations using semantic understanding",
+    tech: "Gemini 2.5 Flash, AWS Bedrock, Supabase",
+    impact: "Improved match accuracy over text search"
   },
   {
-    title: "Production Enterprise App",
-    description: "Kubernetes-orchestrated microservices",
-    tech: "TypeScript, Kubernetes, GraphQL",
-    impact: "99.99% uptime SLA"
+    title: "Aviation Insurance Workflow",
+    description: "Temporal-powered document generation for private jet policies",
+    tech: "Temporal, TypeScript, Node.js",
+    impact: "30-branch decision tree automation"
   }
 ];
 
@@ -83,22 +83,21 @@ export function About() {
           >
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                I&apos;m a Software Development Engineer - GenAI with expertise in full-stack
-                development and AI integration. I hold a Master&apos;s in Computer
-                and Information Science from the University of Michigan (GPA: 3.9) and a
-                Bachelor&apos;s from Anna University.
+                I&apos;m a Lead AI Engineer with 7+ years of experience building agentic AI systems, 
+                financial automation pipelines, and reusable AI accelerators for PE-backed portfolio 
+                companies and enterprise clients. I hold a Master&apos;s in Computer and Information 
+                Science from the University of Michigan.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                I specialize in building scalable, multi-tenant platforms and designing
-                robust data synchronization systems. My tech stack includes Go, Python,
-                TypeScript, and modern frameworks like Next.js and Vue.js. I&apos;m also
-                experienced in AI/ML.
+                I specialize in end-to-end AI solution delivery—from discovery and architecture to 
+                production deployment. Deep expertise in LLM orchestration (LangGraph, LangChain), 
+                Salesforce integrations, and cloud-native data engineering on AWS and Azure.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I&apos;m an active open-source contributor to Google&apos;s go-github library,
-                where I&apos;ve implemented new API methods for GitHub Enterprise. I&apos;m passionate
-                about creating elegant solutions to complex problems and driving innovative,
-                scalable software solutions.
+                I&apos;m an active open-source contributor to Google&apos;s go-github library, 
+                where I&apos;ve implemented new API methods for GitHub Enterprise. Selected as 
+                People&apos;s Choice of the Year 2025 by Google Cloud Developers for building an 
+                AI Voice Agent that automates insurance quoting via phone calls.
               </p>
 
               {/* Resume Download Button */}
@@ -110,7 +109,7 @@ export function About() {
                 className="mt-8"
               >
                 <Button asChild size="lg" className="group">
-                  <a href="/resume/Nithish_Resume.pdf" download target="_blank" className="flex items-center">
+                  <a href="/resume/NITHISH_RESUME_feb11.pdf" download target="_blank" className="flex items-center">
                     <Download className="w-4 h-4 mr-2 transition-transform group-hover:translate-y-0.5" />
                     Download Resume
                   </a>

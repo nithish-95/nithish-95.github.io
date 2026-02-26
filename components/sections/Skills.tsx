@@ -45,6 +45,9 @@ import {
   siFlutter,
   siExpo,
   siGooglegemini,
+  siPytorch,
+  siScikitlearn,
+  siSnowflake,
 } from "simple-icons";
 
 interface SimpleIcon {
@@ -89,6 +92,8 @@ const iconMap: Record<string, SimpleIcon | undefined> = {
   "Google Gemini": siGooglegemini,
   "TensorFlow": siTensorflow,
   "LangChain": siLangchain,
+  "PyTorch": siPytorch,
+  "Scikit-learn": siScikitlearn,
 };
 
 const categories = [
@@ -97,16 +102,19 @@ const categories = [
   { id: "Frontend", label: "Frontend", icon: Layout },
   { id: "Backend", label: "Backend", icon: Server },
   { id: "Cloud", label: "Cloud & DevOps", icon: Cloud },
-  { id: "AI/ML", label: "AI/ML", icon: Sparkles },
+  { id: "AI/ML", label: "AI & LLM", icon: Sparkles },
 ];
 
 const skills: Skill[] = [
   // Languages
-  { name: "Go", level: 92, category: "Languages", fallbackIcon: Terminal, projects: ["Local-Vibes", "Tic-Tac-Toe", "Manga", "Go-Lang"] },
+  { name: "Python", level: 95, category: "Languages", fallbackIcon: Terminal, projects: ["AI/ML Projects", "LangGraph", "Data Engineering"] },
   { name: "TypeScript", level: 95, category: "Languages", fallbackIcon: Terminal, projects: ["Chrono", "Next.js Projects", "Production App"] },
-  { name: "Python", level: 90, category: "Languages", fallbackIcon: Terminal, projects: ["AI/ML Projects", "Twitter Analysis", "ViT Face Detection"] },
   { name: "JavaScript", level: 94, category: "Languages", fallbackIcon: Terminal, projects: ["Frontend Projects", "React Apps"] },
+  { name: "Go", level: 92, category: "Languages", fallbackIcon: Terminal, projects: ["Local-Vibes", "Tic-Tac-Toe", "Manga", "Go-Lang"] },
   { name: "HTML/CSS", level: 96, category: "Languages", fallbackIcon: Layout, projects: ["All Web Projects"] },
+  { name: "SQL", level: 92, category: "Languages", fallbackIcon: Terminal, projects: ["Database Queries", "Snowflake", "PostgreSQL"] },
+  { name: "SOQL", level: 85, category: "Languages", fallbackIcon: Terminal, projects: ["Salesforce Queries"] },
+  { name: "PySpark", level: 80, category: "Languages", fallbackIcon: Terminal, projects: ["Data Processing"] },
 
   // Frontend
   { name: "React", level: 93, category: "Frontend", fallbackIcon: Layout, projects: ["AI Recipe Generator", "Multiple Projects"] },
@@ -121,33 +129,72 @@ const skills: Skill[] = [
 
   // Backend
   { name: "Go Chi", level: 90, category: "Backend", fallbackIcon: Server, projects: ["Local-Vibes", "Tic-Tac-Toe", "Manga"] },
-  { name: "FastAPI", level: 88, category: "Backend", fallbackIcon: Zap, projects: ["AI/ML APIs", "Python Projects"] },
+  { name: "FastAPI", level: 92, category: "Backend", fallbackIcon: Zap, projects: ["AI/ML APIs", "Python Projects"] },
   { name: "WebSockets", level: 88, category: "Backend", fallbackIcon: Cloud, projects: ["Tic-Tac-Toe", "Local-Vibes"] },
-  { name: "REST APIs", level: 92, category: "Backend", fallbackIcon: Server, projects: ["Go-Lang Projects", "Multiple APIs"] },
+  { name: "REST APIs", level: 95, category: "Backend", fallbackIcon: Server, projects: ["Go-Lang Projects", "Multiple APIs"] },
   { name: "PostgreSQL", level: 90, category: "Backend", fallbackIcon: Server, projects: ["Local-Vibes", "Production App"] },
   { name: "Supabase", level: 88, category: "Backend", fallbackIcon: Server, projects: ["Full-stack Apps"] },
   { name: "Convex", level: 85, category: "Backend", fallbackIcon: Zap, projects: ["Real-time Apps"] },
   { name: "PocketBase", level: 82, category: "Backend", fallbackIcon: Box, projects: ["Backend Services"] },
 
   // Cloud & DevOps
-  { name: "AWS Lambda", level: 88, category: "Cloud", fallbackIcon: Cloud, projects: ["Serverless Functions"] },
+  { name: "AWS Lambda", level: 90, category: "Cloud", fallbackIcon: Cloud, projects: ["Serverless Functions"] },
   { name: "AWS App Runner", level: 85, category: "Cloud", fallbackIcon: Rocket, projects: ["Containerized Apps"] },
   { name: "AWS RDS", level: 87, category: "Cloud", fallbackIcon: Server, projects: ["Database Management"] },
-  { name: "AWS S3", level: 90, category: "Cloud", fallbackIcon: Box, projects: ["File Storage", "Static Hosting"] },
+  { name: "AWS S3", level: 92, category: "Cloud", fallbackIcon: Box, projects: ["File Storage", "Static Hosting"] },
   { name: "AWS Fargate", level: 85, category: "Cloud", fallbackIcon: Hexagon, projects: ["Tic-Tac-Toe Game"] },
-  { name: "Docker", level: 88, category: "Cloud", fallbackIcon: Box, projects: ["Local-Vibes", "Manga", "Tic-Tac-Toe"] },
+  { name: "AWS Bedrock", level: 88, category: "Cloud", fallbackIcon: Cloud, projects: ["AI Model Integration"] },
+  { name: "Azure ADF", level: 85, category: "Cloud", fallbackIcon: Cloud, projects: ["Data Engineering"] },
+  { name: "Azure ACI", level: 85, category: "Cloud", fallbackIcon: Cloud, projects: ["Container Instances"] },
+  { name: "Azure ACR", level: 85, category: "Cloud", fallbackIcon: Cloud, projects: ["Container Registry"] },
+  { name: "Azure DevOps", level: 85, category: "Cloud", fallbackIcon: Cloud, projects: ["CI/CD Pipelines"] },
+  { name: "AzureML", level: 80, category: "Cloud", fallbackIcon: Cloud, projects: ["ML Workflows"] },
+  { name: "Databricks", level: 82, category: "Cloud", fallbackIcon: Cloud, projects: ["Data Processing"] },
+  { name: "Snowflake", level: 85, category: "Cloud", fallbackIcon: Cloud, projects: ["Data Warehouse"] },
+  { name: "Docker", level: 90, category: "Cloud", fallbackIcon: Box, projects: ["Local-Vibes", "Manga", "Tic-Tac-Toe"] },
   { name: "Kubernetes", level: 82, category: "Cloud", fallbackIcon: Rocket, projects: ["Production App", "Go-Lang"] },
   { name: "k3s", level: 80, category: "Cloud", fallbackIcon: Hexagon, projects: ["Lightweight K8s"] },
   { name: "CI/CD", level: 85, category: "Cloud", fallbackIcon: Wrench, projects: ["Deployment Pipelines"] },
   { name: "Vercel", level: 92, category: "Cloud", fallbackIcon: Rocket, projects: ["Next.js Deployments"] },
 
   // AI/ML
-  { name: "Google Gemini", level: 88, category: "AI/ML", fallbackIcon: Sparkles, projects: ["Chrono AI Analytics"] },
-  { name: "AWS Bedrock", level: 85, category: "AI/ML", fallbackIcon: Cloud, projects: ["AI Model Integration"] },
+  { name: "LangGraph", level: 95, category: "AI/ML", fallbackIcon: Layers, projects: ["ARR Calculator", "Revenue Leakage", "Document Intelligence"] },
+  { name: "LangChain", level: 92, category: "AI/ML", fallbackIcon: Layers, projects: ["AI Applications", "RAG Pipelines"] },
+  { name: "OpenAI API", level: 95, category: "AI/ML", fallbackIcon: Sparkles, projects: ["Document Intelligence", "AI Apps"] },
+  { name: "Anthropic API", level: 90, category: "AI/ML", fallbackIcon: Sparkles, projects: ["AI Applications"] },
+  { name: "HuggingFace", level: 85, category: "AI/ML", fallbackIcon: Sparkles, projects: ["Model Deployment", "NLP"] },
+  { name: "Google Gemini", level: 90, category: "AI/ML", fallbackIcon: Sparkles, projects: ["Chrono AI Analytics", "Job Matching"] },
+  { name: "AWS Bedrock AI", level: 88, category: "AI/ML", fallbackIcon: Cloud, projects: ["AI Model Integration"] },
   { name: "TensorFlow", level: 85, category: "AI/ML", fallbackIcon: Sparkles, projects: ["Deep Learning", "Face Detection"] },
-  { name: "LangChain", level: 86, category: "AI/ML", fallbackIcon: Layers, projects: ["AI Applications"] },
-  { name: "MCPs", level: 84, category: "AI/ML", fallbackIcon: Box, projects: ["AI Development"] },
-  { name: "Prompt Engineering", level: 90, category: "AI/ML", fallbackIcon: Sparkles, projects: ["AI Integration"] },
+  { name: "PyTorch", level: 82, category: "AI/ML", fallbackIcon: Sparkles, projects: ["Deep Learning"] },
+  { name: "XGBoost", level: 80, category: "AI/ML", fallbackIcon: Sparkles, projects: ["ML Models"] },
+  { name: "FastText", level: 78, category: "AI/ML", fallbackIcon: Sparkles, projects: ["Text Classification"] },
+  { name: "BERT", level: 78, category: "AI/ML", fallbackIcon: Sparkles, projects: ["NLP Models"] },
+  { name: "Prophet", level: 80, category: "AI/ML", fallbackIcon: Sparkles, projects: ["Time Series Forecasting"] },
+  { name: "Scikit-learn", level: 85, category: "AI/ML", fallbackIcon: Sparkles, projects: ["ML Models"] },
+  { name: "MLFlow", level: 82, category: "AI/ML", fallbackIcon: Sparkles, projects: ["MLOps"] },
+  { name: "Prompt Engineering", level: 92, category: "AI/ML", fallbackIcon: Sparkles, projects: ["AI Integration"] },
+
+  // Integrations
+  { name: "Salesforce", level: 90, category: "AI/ML", fallbackIcon: Server, projects: ["ARR Calculator", "Data Migration"] },
+  { name: "NetSuite", level: 85, category: "AI/ML", fallbackIcon: Server, projects: ["FP&A Pipeline"] },
+  { name: "SAP", level: 78, category: "AI/ML", fallbackIcon: Server, projects: ["Enterprise Integration"] },
+  { name: "Microsoft Graph API", level: 88, category: "AI/ML", fallbackIcon: Cloud, projects: ["SharePoint Integration"] },
+  { name: "SharePoint", level: 85, category: "AI/ML", fallbackIcon: Cloud, projects: ["Document Automation"] },
+  { name: "N8N", level: 85, category: "AI/ML", fallbackIcon: Zap, projects: ["Workflow Automation"] },
+
+  // Dev Tools
+  { name: "Cursor", level: 92, category: "AI/ML", fallbackIcon: Terminal, projects: ["AI-Assisted Development"] },
+  { name: "Claude Code", level: 90, category: "AI/ML", fallbackIcon: Terminal, projects: ["AI-Assisted Development"] },
+  { name: "OpenAI Codex", level: 88, category: "AI/ML", fallbackIcon: Terminal, projects: ["AI-Assisted Development"] },
+  { name: "Git", level: 92, category: "AI/ML", fallbackIcon: Terminal, projects: ["Version Control"] },
+  { name: "Azure DevOps CI/CD", level: 85, category: "AI/ML", fallbackIcon: Cloud, projects: ["CI/CD"] },
+
+  // Visualization
+  { name: "Power BI", level: 85, category: "AI/ML", fallbackIcon: Layout, projects: ["Data Visualization"] },
+  { name: "Tableau", level: 80, category: "AI/ML", fallbackIcon: Layout, projects: ["Data Visualization"] },
+  { name: "Plotly", level: 85, category: "AI/ML", fallbackIcon: Layout, projects: ["Data Visualization"] },
+  { name: "Seaborn", level: 85, category: "AI/ML", fallbackIcon: Layout, projects: ["Data Visualization"] },
 ];
 
 interface SkillIconProps {
