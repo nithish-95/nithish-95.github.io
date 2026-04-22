@@ -18,14 +18,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nithish Suresh Babu | Software Developer",
-  description: "Full-stack software developer specializing in building exceptional digital experiences with modern technologies.",
-  keywords: ["software developer", "full-stack", "react", "next.js", "typescript", "portfolio"],
+  title: "Nithish Suresh Babu | Full-Stack Software Engineer",
+  description: "Full-Stack Software Engineer specializing in GenAI-driven systems and scalable cloud architectures. MS in Computer Science from University of Michigan.",
+  keywords: ["software engineer", "full-stack", "genai", "ai", "next.js", "go", "python", "portfolio"],
   authors: [{ name: "Nithish Suresh Babu" }],
   openGraph: {
-    title: "Nithish Suresh Babu | Software Developer",
-    description: "Full-stack software developer specializing in building exceptional digital experiences.",
+    title: "Nithish Suresh Babu | Full-Stack Software Engineer",
+    description: "Full-Stack Software Engineer specializing in GenAI-driven systems and scalable cloud architectures.",
     type: "website",
+    url: "https://portfolio.nithish.net",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nithish Suresh Babu | Full-Stack Software Engineer",
+    description: "Full-Stack Software Engineer specializing in GenAI-driven systems and scalable cloud architectures.",
   },
 };
 

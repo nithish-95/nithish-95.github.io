@@ -32,7 +32,7 @@ export function Footer() {
               Nithish Suresh Babu
             </Link>
             <p className="text-muted-foreground mt-2 text-sm">
-              Software Development Engineer - GenAI | MS Computer Science, University of Michigan
+              Full-Stack Software Engineer · MS Computer Science, University of Michigan
             </p>
           </div>
 

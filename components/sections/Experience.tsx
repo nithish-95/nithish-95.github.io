@@ -2,37 +2,68 @@
 
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
-import { Building2, Calendar, MapPin } from "lucide-react";
+import { Building2, Calendar, MapPin, ArrowUpRight } from "lucide-react";
 
 const experiences = [
   {
     id: 1,
-    role: "Lead AI Engineer",
-    company: "Tech Torch",
-    location: "South Elgin, IL",
-    period: "Jul 2025 – Present",
-    description: "Architected and sole-developed an AI-powered ARR/NARR Calculator replacing a manual process handled by 5–10 finance ops staff, reducing calculation time from days to seconds. Engineered a trigger-based LangGraph pipeline that activates on Salesforce Opportunity stage change, resolves complex deal lineage (renewals, amendments, upgrades), and writes computed ARR/NARR matrices directly back to Salesforce. Eliminated 1–3 hrs of daily manual FP&A effort by building a fully automated report pipeline ingesting Salesforce and NetSuite data and delivering daily outputs to SharePoint via Microsoft Graph API.",
-    technologies: ["LangGraph", "Salesforce", "NetSuite", "Python", "React", "AWS", "Microsoft Graph API"],
+    role: "Software Development Engineer - GenAI",
+    company: "Square Results",
+    location: "Remote, WA",
+    period: "Aug 2025 – Present",
+    highlights: [
+      "Designed and implemented a RAG-based job matching pipeline using Gemini 2.5 Flash that ingests resumes from AWS S3, queries job descriptions from Bedrock, and generates personalized recommendations",
+      "Built scheduled pipeline with Supabase caching for fast retrieval and improved system responsiveness",
+      "Automated CI/CD pipelines using GitHub Actions and Docker, deploying backend via AWS App Runner and frontend via AWS Amplify",
+      "Engineered secure multi-tenant platform using FastAPI and Next.js with strict data isolation and access controls",
+      "Led redesign of Square Results V2, transforming static website into scalable full-stack platform with chatbot integration and admin dashboards",
+      "Owned and delivered end-to-end athlete scouting platform using Next.js, Convex, and Amazon S3",
+      "Built AI-powered recruitment platform MVP in 30 days from ideation to investor-ready demo",
+      "Designed infrastructure using Terraform and developed monorepo system with Turborepo including web, backend, and mobile app",
+    ],
+    technologies: ["FastAPI", "Next.js", "AWS", "Gemini", "Supabase", "Docker", "Terraform", "Turborepo", "Convex"],
     current: true,
   },
   {
     id: 2,
-    role: "Software Development Engineer - GenAI",
-    company: "Square Results",
-    location: "Seattle, WA",
-    period: "Aug 2023 – July 2025",
-    description: "Architected RAG based job matching pipeline using Gemini 2.5 Flash that ingests user resume from AWS S3 and queries relevant job descriptions from AWS Bedrock knowledge base, generating personalised job recommendations. Built a secure, multi-tenant backend with FastAPI and responsive frontend with Next.js, ensuring strict data isolation.",
-    technologies: ["FastAPI", "Next.js", "AWS S3", "AWS Bedrock", "Gemini 2.5", "Supabase", "Docker", "GitHub Actions"],
+    role: "Software Developer - Contract",
+    company: "ClassA.AI",
+    location: "Remote, WA",
+    period: "Jul 2025 – Aug 2025",
+    highlights: [
+      "Re-architected document-generation workflow for aviation insurance platform using Temporal, enabling 30-branch decision tree for private-jet policies",
+      "Replaced fragmented database-backed state machine with durable workflow model, eliminating manual state persistence",
+      "Enhanced data consistency and fault tolerance using Temporal's stateful history for deterministic resume of interrupted document generations",
+    ],
+    technologies: ["Temporal", "TypeScript", "Node.js", "Document Generation"],
     current: false,
   },
   {
     id: 3,
-    role: "Software Developer",
-    company: "ClassA.AI",
-    location: "Seattle, WA",
-    period: "Jul 2022 - Jul 2023",
-    description: "Re-architected a document generation workflow for an aviation insurance platform using Temporal to manage a complex 30-branch decision tree for private jet insurance policies. Replaced a fragmented, database-backed state machine with a durable workflow model.",
-    technologies: ["Temporal", "TypeScript", "Node.js", "Document Generation"],
+    role: "Full Stack Engineer",
+    company: "Central Marine Research Institute",
+    location: "Remote, WA",
+    period: "Jan 2025 – Jul 2025",
+    highlights: [
+      "Transformed unstructured PDFs of marine encyclopedia into structured SQLite3 database by extracting images and metadata with Python",
+      "Built responsive web application using Vue.js and Go backend for real-time visualization and search of marine research data",
+      "Developed cross-platform mobile app using Flutter with offline-first architecture for researchers in remote settings",
+    ],
+    technologies: ["Go", "Vue.js", "Flutter", "SQLite", "Python"],
+    current: false,
+  },
+  {
+    id: 4,
+    role: "Research Assistant - GenAI DeepFake",
+    company: "University of Michigan",
+    location: "Dearborn, MI",
+    period: "Sep 2024 – Dec 2024",
+    highlights: [
+      "Developed benchmarking pipelines using Python and TensorFlow to evaluate eight Deepfake detection models",
+      "Achieved 88.37% accuracy on diverse GenAI image datasets with custom model",
+      "Engineered continuous feedback loop by deploying full-stack Next.js prototype for public testing with SQLite schema capturing user data for iterative retraining",
+    ],
+    technologies: ["Python", "TensorFlow", "Next.js", "SQLite", "ML"],
     current: false,
   },
 ];
@@ -40,7 +71,7 @@ const experiences = [
 export function Experience() {
   return (
     <section id="experience" className="py-24 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -56,15 +87,12 @@ export function Experience() {
             Experience
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            My professional journey and the companies I&apos;ve had the privilege to work with.
+            Impact-driven engineering across GenAI, backend, and full-stack roles.
           </p>
         </motion.div>
 
         {/* Timeline */}
-        <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2" />
-
+        <div className="relative space-y-8">
           {experiences.map((exp, index) => (
             <motion.div
               key={exp.id}
@@ -72,80 +100,84 @@ export function Experience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 * index }}
-              className={`relative flex flex-col md:flex-row gap-8 mb-12 last:mb-0 ${
-                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              }`}
             >
-              {/* Timeline Dot */}
-              <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full bg-primary md:-translate-x-1/2 mt-2 ring-4 ring-background" />
+              <div className="relative pl-8 md:pl-0">
+                {/* Timeline connector */}
+                {index !== experiences.length - 1 && (
+                  <div className="absolute left-[11px] md:left-[calc(50%-1px)] top-12 bottom-[-32px] w-px bg-border" />
+                )}
+                
+                {/* Timeline dot */}
+                <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-3 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
+                  <div className={`w-3 h-3 rounded-full ${exp.current ? 'bg-primary' : 'bg-primary/60'}`} />
+                </div>
 
-              {/* Content Card */}
-              <div
-                className={`ml-12 md:ml-0 md:w-[calc(50%-2rem)] ${
-                  index % 2 === 0 ? "md:pr-8 md:text-right" : "md:pl-8"
-                }`}
-              >
-                <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
-                  {/* Header */}
-                  <div className={`mb-4 ${index % 2 === 0 ? "md:text-right" : ""}`}>
-                    <div className="flex items-center gap-2 mb-2 flex-wrap">
-                      <h3 className="text-xl font-bold">{exp.role}</h3>
-                      {exp.current && (
-                        <Badge variant="default" className="text-xs">
-                          Current
-                        </Badge>
-                      )}
-                    </div>
-                    <div
-                      className={`flex items-center gap-4 text-muted-foreground text-sm flex-wrap ${
-                        index % 2 === 0 ? "md:justify-end" : ""
-                      }`}
-                    >
-                      <span className="flex items-center gap-1">
-                        <Building2 className="w-4 h-4" />
-                        {exp.company}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <MapPin className="w-4 h-4" />
-                        {exp.location}
-                      </span>
-                    </div>
-                    <span
-                      className={`flex items-center gap-1 text-sm text-primary font-medium mt-2 ${
-                        index % 2 === 0 ? "md:justify-end" : ""
-                      }`}
-                    >
-                      <Calendar className="w-4 h-4" />
+                {/* Content */}
+                <div className={`md:grid md:grid-cols-2 md:gap-8 ${
+                  index % 2 === 0 ? '' : 'md:text-right'
+                }`}>
+                  {/* Date - shown on opposite side for alternating */}
+                  <div className={`hidden md:block ${index % 2 === 0 ? 'md:text-right md:pr-8' : 'md:order-2 md:pl-8'}`}>
+                    <span className="text-sm font-medium text-muted-foreground">
                       {exp.period}
                     </span>
                   </div>
 
-                  {/* Description */}
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    {exp.description}
-                  </p>
+                  {/* Card */}
+                  <div className={`${index % 2 === 0 ? 'md:order-2 md:pl-8' : 'md:pr-8'}`}>
+                    <div className="bg-card border border-border rounded-2xl p-6 hover:border-primary/30 transition-all duration-300">
+                      {/* Header */}
+                      <div className="mb-4">
+                        <div className="flex items-center gap-2 mb-2 flex-wrap">
+                          <h3 className="text-lg font-bold">{exp.role}</h3>
+                          {exp.current && (
+                            <Badge variant="default" className="text-[10px]">
+                              Current
+                            </Badge>
+                          )}
+                        </div>
+                        <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+                          <span className="flex items-center gap-1">
+                            <Building2 className="w-3.5 h-3.5" />
+                            {exp.company}
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <MapPin className="w-3.5 h-3.5" />
+                            {exp.location}
+                          </span>
+                          <span className="md:hidden flex items-center gap-1">
+                            <Calendar className="w-3.5 h-3.5" />
+                            {exp.period}
+                          </span>
+                        </div>
+                      </div>
 
-                  {/* Technologies */}
-                  <div
-                    className={`flex flex-wrap gap-2 ${
-                      index % 2 === 0 ? "md:justify-end" : ""
-                    }`}
-                  >
-                    {exp.technologies.map((tech) => (
-                      <Badge
-                        key={tech}
-                        variant="secondary"
-                        className="text-xs font-medium"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
+                      {/* Highlights */}
+                      <ul className="space-y-2 mb-4">
+                        {exp.highlights.map((highlight, i) => (
+                          <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                            <ArrowUpRight className="w-3.5 h-3.5 text-primary mt-0.5 shrink-0" />
+                            <span>{highlight}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      {/* Technologies */}
+                      <div className={`flex flex-wrap gap-1.5 ${index % 2 === 0 ? '' : 'md:justify-end'}`}>
+                        {exp.technologies.map((tech) => (
+                          <Badge
+                            key={tech}
+                            variant="secondary"
+                            className="text-[10px] font-medium"
+                          >
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-
-              {/* Empty space for alternating layout */}
-              <div className="hidden md:block md:w-[calc(50%-2rem)]" />
             </motion.div>
           ))}
         </div>

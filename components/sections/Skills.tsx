@@ -1,277 +1,68 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import {
+import { motion } from "framer-motion";
+import { 
+  Layout, 
+  Server, 
+  Brain, 
   Cloud,
-  Smartphone,
-  Layout,
-  Server,
-  Terminal,
-  Box,
-  Layers,
-  Wrench,
-  Sparkles,
-  Rocket,
-  Zap,
-  Hexagon,
-  LucideIcon,
+  Database,
+  Code2,
+  Wrench
 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent } from "@/components/ui/card";
 
-
-// Import simple-icons
-import {
-  siGo,
-  siTypescript,
-  siPython,
-  siJavascript,
-  siHtml5,
-  siReact,
-  siNextdotjs,
-  siVuedotjs,
-  siTailwindcss,
-  siShadcnui,
-  siPostgresql,
-  siDocker,
-  siKubernetes,
-  siTensorflow,
-  siLangchain,
-  siSupabase,
-  siVercel,
-  siFastapi,
-  siFlutter,
-  siExpo,
-  siGooglegemini,
-  siPytorch,
-  siScikitlearn,
-  siSnowflake,
-} from "simple-icons";
-
-interface SimpleIcon {
-  title: string;
-  slug: string;
-  hex: string;
-  path: string;
-  source: string;
-  guidelines?: string | undefined;
-  license?: { type: string; url?: string } | undefined;
-}
-
-interface Skill {
-  name: string;
-  level: number;
-  category: string;
-  icon?: SimpleIcon;
-  fallbackIcon: LucideIcon;
-  projects: string[];
-}
-
-// Icon mapping for skills
-const iconMap: Record<string, SimpleIcon | undefined> = {
-  "Go": siGo,
-  "TypeScript": siTypescript,
-  "Python": siPython,
-  "JavaScript": siJavascript,
-  "HTML/CSS": siHtml5,
-  "React": siReact,
-  "Next.js": siNextdotjs,
-  "Vue.js": siVuedotjs,
-  "Tailwind CSS": siTailwindcss,
-  "Shadcn UI": siShadcnui,
-  "PostgreSQL": siPostgresql,
-  "Supabase": siSupabase,
-  "Docker": siDocker,
-  "Kubernetes": siKubernetes,
-  "Vercel": siVercel,
-  "FastAPI": siFastapi,
-  "Flutter": siFlutter,
-  "Expo": siExpo,
-  "Google Gemini": siGooglegemini,
-  "TensorFlow": siTensorflow,
-  "LangChain": siLangchain,
-  "PyTorch": siPytorch,
-  "Scikit-learn": siScikitlearn,
-};
-
-const categories = [
-  { id: "all", label: "All", icon: Layout },
-  { id: "Languages", label: "Languages", icon: Terminal },
-  { id: "Frontend", label: "Frontend", icon: Layout },
-  { id: "Backend", label: "Backend", icon: Server },
-  { id: "Cloud", label: "Cloud & DevOps", icon: Cloud },
-  { id: "AI/ML", label: "AI & LLM", icon: Sparkles },
+const skillCategories = [
+  {
+    id: "languages",
+    label: "Languages",
+    icon: Code2,
+    skills: [
+      "Go", "Python", "TypeScript", "JavaScript", "C++", "HTML", "CSS", "SQL"
+    ],
+  },
+  {
+    id: "frontend",
+    label: "Frontend",
+    icon: Layout,
+    skills: [
+      "Next.js", "React", "Tailwind CSS", "Shadcn/ui", "React Native", "TanStack", "Flutter", "Vue.js"
+    ],
+  },
+  {
+    id: "backend",
+    label: "Backend",
+    icon: Server,
+    skills: [
+      "Go", "FastAPI", "Node.js", "Supabase", "Firebase", "Convex", "PocketBase", "REST APIs"
+    ],
+  },
+  {
+    id: "database",
+    label: "Database",
+    icon: Database,
+    skills: [
+      "PostgreSQL", "SQLite", "AWS RDS", "DynamoDB", "Redis"
+    ],
+  },
+  {
+    id: "cloud",
+    label: "Cloud & DevOps",
+    icon: Cloud,
+    skills: [
+      "AWS", "GCP", "EC2", "CloudFront", "Amplify", "Fargate", "App Runner", "S3", "SageMaker", "CI/CD", "Docker", "GitHub Actions", "Route53", "Kubernetes", "Terraform"
+    ],
+  },
+  {
+    id: "ai",
+    label: "AI / ML",
+    icon: Brain,
+    skills: [
+      "LangChain", "Bedrock", "Ollama", "RAG", "AI Agents", "Gemini", "OpenAI", "TensorFlow", "PyTorch"
+    ],
+  },
 ];
-
-const skills: Skill[] = [
-  // Languages
-  { name: "Python", level: 95, category: "Languages", fallbackIcon: Terminal, projects: ["AI/ML Projects", "LangGraph", "Data Engineering"] },
-  { name: "TypeScript", level: 95, category: "Languages", fallbackIcon: Terminal, projects: ["Chrono", "Next.js Projects", "Production App"] },
-  { name: "JavaScript", level: 94, category: "Languages", fallbackIcon: Terminal, projects: ["Frontend Projects", "React Apps"] },
-  { name: "Go", level: 92, category: "Languages", fallbackIcon: Terminal, projects: ["Local-Vibes", "Tic-Tac-Toe", "Manga", "Go-Lang"] },
-  { name: "HTML/CSS", level: 96, category: "Languages", fallbackIcon: Layout, projects: ["All Web Projects"] },
-  { name: "SQL", level: 92, category: "Languages", fallbackIcon: Terminal, projects: ["Database Queries", "Snowflake", "PostgreSQL"] },
-  { name: "SOQL", level: 85, category: "Languages", fallbackIcon: Terminal, projects: ["Salesforce Queries"] },
-  { name: "PySpark", level: 80, category: "Languages", fallbackIcon: Terminal, projects: ["Data Processing"] },
-
-  // Frontend
-  { name: "React", level: 93, category: "Frontend", fallbackIcon: Layout, projects: ["AI Recipe Generator", "Multiple Projects"] },
-  { name: "Next.js", level: 95, category: "Frontend", fallbackIcon: Layout, projects: ["Chrono", "Next Auth Template", "Portfolio"] },
-  { name: "Vue.js", level: 85, category: "Frontend", fallbackIcon: Layout, projects: ["Local-Vibes Platform"] },
-  { name: "Tailwind CSS", level: 95, category: "Frontend", fallbackIcon: Layers, projects: ["All Recent Projects"] },
-  { name: "Shadcn UI", level: 90, category: "Frontend", fallbackIcon: Box, projects: ["Chrono", "Portfolio"] },
-  { name: "React Native", level: 82, category: "Frontend", fallbackIcon: Smartphone, projects: ["Mobile Apps"] },
-  { name: "Expo", level: 80, category: "Frontend", fallbackIcon: Smartphone, projects: ["Mobile Development"] },
-  { name: "Flutter", level: 78, category: "Frontend", fallbackIcon: Layers, projects: ["Cross-platform Apps"] },
-  { name: "AWS Amplify", level: 85, category: "Frontend", fallbackIcon: Cloud, projects: ["Full-stack Projects"] },
-
-  // Backend
-  { name: "Go Chi", level: 90, category: "Backend", fallbackIcon: Server, projects: ["Local-Vibes", "Tic-Tac-Toe", "Manga"] },
-  { name: "FastAPI", level: 92, category: "Backend", fallbackIcon: Zap, projects: ["AI/ML APIs", "Python Projects"] },
-  { name: "WebSockets", level: 88, category: "Backend", fallbackIcon: Cloud, projects: ["Tic-Tac-Toe", "Local-Vibes"] },
-  { name: "REST APIs", level: 95, category: "Backend", fallbackIcon: Server, projects: ["Go-Lang Projects", "Multiple APIs"] },
-  { name: "PostgreSQL", level: 90, category: "Backend", fallbackIcon: Server, projects: ["Local-Vibes", "Production App"] },
-  { name: "Supabase", level: 88, category: "Backend", fallbackIcon: Server, projects: ["Full-stack Apps"] },
-  { name: "Convex", level: 85, category: "Backend", fallbackIcon: Zap, projects: ["Real-time Apps"] },
-  { name: "PocketBase", level: 82, category: "Backend", fallbackIcon: Box, projects: ["Backend Services"] },
-
-  // Cloud & DevOps
-  { name: "AWS Lambda", level: 90, category: "Cloud", fallbackIcon: Cloud, projects: ["Serverless Functions"] },
-  { name: "AWS App Runner", level: 85, category: "Cloud", fallbackIcon: Rocket, projects: ["Containerized Apps"] },
-  { name: "AWS RDS", level: 87, category: "Cloud", fallbackIcon: Server, projects: ["Database Management"] },
-  { name: "AWS S3", level: 92, category: "Cloud", fallbackIcon: Box, projects: ["File Storage", "Static Hosting"] },
-  { name: "AWS Fargate", level: 85, category: "Cloud", fallbackIcon: Hexagon, projects: ["Tic-Tac-Toe Game"] },
-  { name: "AWS Bedrock", level: 88, category: "Cloud", fallbackIcon: Cloud, projects: ["AI Model Integration"] },
-  { name: "Azure ADF", level: 85, category: "Cloud", fallbackIcon: Cloud, projects: ["Data Engineering"] },
-  { name: "Azure ACI", level: 85, category: "Cloud", fallbackIcon: Cloud, projects: ["Container Instances"] },
-  { name: "Azure ACR", level: 85, category: "Cloud", fallbackIcon: Cloud, projects: ["Container Registry"] },
-  { name: "Azure DevOps", level: 85, category: "Cloud", fallbackIcon: Cloud, projects: ["CI/CD Pipelines"] },
-  { name: "AzureML", level: 80, category: "Cloud", fallbackIcon: Cloud, projects: ["ML Workflows"] },
-  { name: "Databricks", level: 82, category: "Cloud", fallbackIcon: Cloud, projects: ["Data Processing"] },
-  { name: "Snowflake", level: 85, category: "Cloud", fallbackIcon: Cloud, projects: ["Data Warehouse"] },
-  { name: "Docker", level: 90, category: "Cloud", fallbackIcon: Box, projects: ["Local-Vibes", "Manga", "Tic-Tac-Toe"] },
-  { name: "Kubernetes", level: 82, category: "Cloud", fallbackIcon: Rocket, projects: ["Production App", "Go-Lang"] },
-  { name: "k3s", level: 80, category: "Cloud", fallbackIcon: Hexagon, projects: ["Lightweight K8s"] },
-  { name: "CI/CD", level: 85, category: "Cloud", fallbackIcon: Wrench, projects: ["Deployment Pipelines"] },
-  { name: "Vercel", level: 92, category: "Cloud", fallbackIcon: Rocket, projects: ["Next.js Deployments"] },
-
-  // AI/ML
-  { name: "LangGraph", level: 95, category: "AI/ML", fallbackIcon: Layers, projects: ["ARR Calculator", "Revenue Leakage", "Document Intelligence"] },
-  { name: "LangChain", level: 92, category: "AI/ML", fallbackIcon: Layers, projects: ["AI Applications", "RAG Pipelines"] },
-  { name: "OpenAI API", level: 95, category: "AI/ML", fallbackIcon: Sparkles, projects: ["Document Intelligence", "AI Apps"] },
-  { name: "Anthropic API", level: 90, category: "AI/ML", fallbackIcon: Sparkles, projects: ["AI Applications"] },
-  { name: "HuggingFace", level: 85, category: "AI/ML", fallbackIcon: Sparkles, projects: ["Model Deployment", "NLP"] },
-  { name: "Google Gemini", level: 90, category: "AI/ML", fallbackIcon: Sparkles, projects: ["Chrono AI Analytics", "Job Matching"] },
-  { name: "AWS Bedrock AI", level: 88, category: "AI/ML", fallbackIcon: Cloud, projects: ["AI Model Integration"] },
-  { name: "TensorFlow", level: 85, category: "AI/ML", fallbackIcon: Sparkles, projects: ["Deep Learning", "Face Detection"] },
-  { name: "PyTorch", level: 82, category: "AI/ML", fallbackIcon: Sparkles, projects: ["Deep Learning"] },
-  { name: "XGBoost", level: 80, category: "AI/ML", fallbackIcon: Sparkles, projects: ["ML Models"] },
-  { name: "FastText", level: 78, category: "AI/ML", fallbackIcon: Sparkles, projects: ["Text Classification"] },
-  { name: "BERT", level: 78, category: "AI/ML", fallbackIcon: Sparkles, projects: ["NLP Models"] },
-  { name: "Prophet", level: 80, category: "AI/ML", fallbackIcon: Sparkles, projects: ["Time Series Forecasting"] },
-  { name: "Scikit-learn", level: 85, category: "AI/ML", fallbackIcon: Sparkles, projects: ["ML Models"] },
-  { name: "MLFlow", level: 82, category: "AI/ML", fallbackIcon: Sparkles, projects: ["MLOps"] },
-  { name: "Prompt Engineering", level: 92, category: "AI/ML", fallbackIcon: Sparkles, projects: ["AI Integration"] },
-
-  // Integrations
-  { name: "Salesforce", level: 90, category: "AI/ML", fallbackIcon: Server, projects: ["ARR Calculator", "Data Migration"] },
-  { name: "NetSuite", level: 85, category: "AI/ML", fallbackIcon: Server, projects: ["FP&A Pipeline"] },
-  { name: "SAP", level: 78, category: "AI/ML", fallbackIcon: Server, projects: ["Enterprise Integration"] },
-  { name: "Microsoft Graph API", level: 88, category: "AI/ML", fallbackIcon: Cloud, projects: ["SharePoint Integration"] },
-  { name: "SharePoint", level: 85, category: "AI/ML", fallbackIcon: Cloud, projects: ["Document Automation"] },
-  { name: "N8N", level: 85, category: "AI/ML", fallbackIcon: Zap, projects: ["Workflow Automation"] },
-
-  // Dev Tools
-  { name: "Cursor", level: 92, category: "AI/ML", fallbackIcon: Terminal, projects: ["AI-Assisted Development"] },
-  { name: "Claude Code", level: 90, category: "AI/ML", fallbackIcon: Terminal, projects: ["AI-Assisted Development"] },
-  { name: "OpenAI Codex", level: 88, category: "AI/ML", fallbackIcon: Terminal, projects: ["AI-Assisted Development"] },
-  { name: "Git", level: 92, category: "AI/ML", fallbackIcon: Terminal, projects: ["Version Control"] },
-  { name: "Azure DevOps CI/CD", level: 85, category: "AI/ML", fallbackIcon: Cloud, projects: ["CI/CD"] },
-
-  // Visualization
-  { name: "Power BI", level: 85, category: "AI/ML", fallbackIcon: Layout, projects: ["Data Visualization"] },
-  { name: "Tableau", level: 80, category: "AI/ML", fallbackIcon: Layout, projects: ["Data Visualization"] },
-  { name: "Plotly", level: 85, category: "AI/ML", fallbackIcon: Layout, projects: ["Data Visualization"] },
-  { name: "Seaborn", level: 85, category: "AI/ML", fallbackIcon: Layout, projects: ["Data Visualization"] },
-];
-
-interface SkillIconProps {
-  skillName: string;
-  className?: string;
-}
-
-function SkillIcon({ skillName, className }: SkillIconProps) {
-  const icon = iconMap[skillName];
-  const FallbackIcon = skills.find(s => s.name === skillName)?.fallbackIcon || Box;
-
-  if (!icon) {
-    return <FallbackIcon className={className} />;
-  }
-
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      className={className}
-      fill="currentColor"
-      role="img"
-      aria-label={icon.title}
-    >
-      <path d={icon.path} />
-    </svg>
-  );
-}
-
-interface SkillCardProps {
-  skill: Skill;
-  index: number;
-}
-
-function SkillCard({ skill, index }: SkillCardProps) {
-  return (
-    <motion.div
-      layout
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.8 }}
-      transition={{ duration: 0.3, delay: index * 0.05 }}
-    >
-      <Card className="group relative overflow-hidden border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/20%)] hover:scale-[1.02]">
-        <CardContent className="p-4">
-          <div className="flex items-start gap-3">
-            <div className="p-2 rounded-lg bg-primary/10 shrink-0">
-              <SkillIcon skillName={skill.name} className="w-6 h-6 text-primary" />
-            </div>
-            <div className="flex-1 min-w-0">
-              <h4 className="font-semibold text-sm mb-2 truncate">{skill.name}</h4>
-              <div className="flex flex-wrap gap-1 overflow-hidden h-5">
-                {skill.projects.slice(0, 1).map((project) => (
-                  <Badge key={project} variant="outline" className="text-[9px] px-1.5 py-0 whitespace-nowrap">
-                    {project}
-                  </Badge>
-                ))}
-                {skill.projects.length > 1 && (
-                  <Badge variant="outline" className="text-[9px] px-1.5 py-0 whitespace-nowrap">
-                    +{skill.projects.length - 1}
-                  </Badge>
-                )}
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-    </motion.div>
-  );
-}
 
 export function Skills() {
-  const [activeCategory, setActiveCategory] = useState("all");
-
-  const filteredSkills = activeCategory === "all"
-    ? skills
-    : skills.filter(skill => skill.category === activeCategory);
-
   return (
     <section id="skills" className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
       <div className="max-w-6xl mx-auto">
@@ -281,69 +72,82 @@ export function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
           <span className="text-primary font-medium text-sm uppercase tracking-wider mb-2 block">
-            My Expertise
+            Tech Stack
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             Skills & Technologies
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive tech stack spanning frontend, backend, cloud, and AI. Each skill shows real-world projects where it&apos;s applied.
+            Technologies I use to build production-ready systems.
           </p>
         </motion.div>
 
-        {/* Tabs Navigation */}
+        {/* Skills Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skillCategories.map((category, categoryIndex) => {
+            const Icon = category.icon;
+            return (
+              <motion.div
+                key={category.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
+              >
+                <div className="h-full bg-card border border-border rounded-2xl p-6 hover:border-primary/20 transition-colors duration-300">
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="p-2 bg-primary/10 rounded-lg">
+                      <Icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <h3 className="text-lg font-semibold">{category.label}</h3>
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill, skillIndex) => (
+                      <motion.span
+                        key={skill}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ 
+                          duration: 0.2, 
+                          delay: categoryIndex * 0.1 + skillIndex * 0.02 
+                        }}
+                        className="px-3 py-1.5 text-sm font-medium bg-secondary text-secondary-foreground rounded-lg hover:bg-primary hover:text-primary-foreground transition-colors duration-200 cursor-default"
+                      >
+                        {skill}
+                      </motion.span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Additional Tools */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="flex justify-center mb-10"
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-12 text-center"
         >
-          <Tabs value={activeCategory} onValueChange={setActiveCategory} className="w-auto">
-            <TabsList variant="line" className="flex-wrap justify-center h-auto gap-1">
-              {categories.map((category) => {
-                const Icon = category.icon;
-                return (
-                  <TabsTrigger
-                    key={category.id}
-                    value={category.id}
-                    className="data-[state=active]:text-primary"
-                  >
-                    <Icon className="w-3.5 h-3.5 mr-1.5" />
-                    {category.label}
-                  </TabsTrigger>
-                );
-              })}
-            </TabsList>
-          </Tabs>
-        </motion.div>
-
-        {/* Skills Grid with AnimatePresence */}
-        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          <AnimatePresence mode="popLayout">
-            {filteredSkills.map((skill, index) => (
-              <SkillCard key={skill.name} skill={skill} index={index} />
-            ))}
-          </AnimatePresence>
-        </motion.div>
-
-        {/* Additional Skills Summary */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-16 text-center"
-        >
-          <p className="text-muted-foreground mb-4">Also experienced with:</p>
+          <p className="text-sm text-muted-foreground mb-4">Also experienced with</p>
           <div className="flex flex-wrap justify-center gap-2">
-            {["Coolify", "Dokploy", "Route53", "IAM", "AWS Rekognition", "AWS Polly", "Postman"].map((skill) => (
-              <Badge key={skill} variant="secondary" className="px-3 py-1">
-                {skill}
-              </Badge>
+            {[
+              "Temporal", "WebSockets", "Turborepo", "Expo", "AWS Rekognition",
+              "MLflow", "N8N", "Cursor", "Claude Code", "Git"
+            ].map((tool) => (
+              <span
+                key={tool}
+                className="px-3 py-1 text-xs text-muted-foreground bg-muted rounded-full"
+              >
+                {tool}
+              </span>
             ))}
           </div>
         </motion.div>
